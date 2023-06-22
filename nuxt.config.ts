@@ -8,4 +8,9 @@ export default defineNuxtConfig({
       autoprefixer: {},
     },
   },
+  router: {
+    options: {
+      linkActiveClass: "bg-secondary/90",
+    },
+  },
 });
