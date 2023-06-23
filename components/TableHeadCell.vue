@@ -1,6 +1,6 @@
 <template>
     <TableCell class="!pt-0 !pb-0 text-left font-semibold text-sm text-tertiary" v-bind="$attrs">
-        <div class="flex flex-row items-center">
+        <div class="flex flex-row items-center" :class="{ 'justify-end': justifyRight }">
             <span>
                 <slot></slot>
             </span>
@@ -12,6 +12,7 @@
 <script setup lang="ts">
 export interface Props {
     showSortButton?: boolean
+    justifyRight?: boolean
 }
 
 const emit = defineEmits<{
@@ -19,6 +20,7 @@ const emit = defineEmits<{
 }>()
 
 withDefaults(defineProps<Props>(), {
-    showSortButton: true
+    showSortButton: true,
+    justifyRight: false
 })
 </script>
