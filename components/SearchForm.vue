@@ -4,9 +4,8 @@
             class="rounded-e-none w-96" :value="search.phrase" />
         <Field @change="handleChangeRange" is="select" name="search-range"
             class="rounded-s-none border-l border-l-gray-100">
-            <option value="all" :selected="search.range === 'all'">Wszystko</option>
-            <option value="categories" :selected="search.range === 'categories'">Kategorie</option>
-            <option value="products" :selected="search.range === 'products'">Produkty</option>
+            <option v-for="range in ['all', 'products', 'categories']" :key="range" :value="range"
+                :selected="range == search.range">{{ range }}</option>
         </Field>
     </form>
 </template>
