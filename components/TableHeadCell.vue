@@ -4,7 +4,7 @@
             <span>
                 <slot></slot>
             </span>
-            <IconButton v-if="showSortButton" iconSrc="sort-column.svg" />
+            <IconButton v-if="showSortButton" @click="emit('sort')" iconSrc="sort-column.svg" />
         </div>
     </TableCell>
 </template>
@@ -13,6 +13,10 @@
 export interface Props {
     showSortButton?: boolean
 }
+
+const emit = defineEmits<{
+    sort: []
+}>()
 
 withDefaults(defineProps<Props>(), {
     showSortButton: true
