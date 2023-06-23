@@ -1,5 +1,5 @@
 <template>
-    <Box class="w-96" v-bind="$attrs">
+    <Box class="lg:w-96 w-full" v-bind="$attrs">
         <BoxTitle>filtry</BoxTitle>
         <div class="mt-4 flex flex-col gap-y-4">
             <Field is="select" name="category" label="Kategoria">
@@ -14,8 +14,10 @@
                 <option>Wewnętrzna</option>
                 <option>Zewnętrzna</option>
             </Field>
-            <PrimaryButton>Zastouj</PrimaryButton>
-            <SecondaryButton>Zresetuj</SecondaryButton>
+            <div class="flex flex-row gap-4 lg:flex-col">
+                <PrimaryButton class="lg:w-full w-full">Zastouj</PrimaryButton>
+                <SecondaryButton class="lg:w-full w-full">Zresetuj</SecondaryButton>
+            </div>
         </div>
     </Box>
 </template>
