@@ -1,18 +1,17 @@
 <template>
-    <Box class="m-4 w-fit">
-        <BoxTitle>Kolumny</BoxTitle>
-        <div class="flex flex-col gap-y-2 mt-4">
-            <div v-for="column in columns" class="cursor-pointer p-4 w-96 border border-gray-50 rounded"
-                :class="{ 'bg-gray-50': isVisible(column) }" @click="emit('toggle', column)">
-                <p>{{ column }}</p>
-            </div>
+    <div class="flex flex-col gap-y-2 mt-4 w-full">
+        <div v-for="column in columns" class="cursor-pointer p-4 border border-gray-100 rounded"
+            :class="{ 'bg-gray-100': isVisible(column) }" @click="emit('toggle', column)">
+            <p class="normal-case">{{ column }}</p>
         </div>
-    </Box>
+        <SecondaryButton @click="emit('reset')">Resetuj</SecondaryButton>
+    </div>
 </template>
 
 <script setup lang="ts">
 const emit = defineEmits<{
-    toggle: [columnName: string]
+    toggle: [columnName: string],
+    reset: []
 }>()
 
 export interface Props {

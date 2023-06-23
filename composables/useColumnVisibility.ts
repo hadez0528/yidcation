@@ -14,7 +14,7 @@ export const useColumnVisibility = (
     `${tableName}ColumnVisibility`,
     () => ({
       columns,
-      visibleColumns: defaultVisibleColumns,
+      visibleColumns: [...defaultVisibleColumns],
     })
   );
 
@@ -35,10 +35,15 @@ export const useColumnVisibility = (
     }
   };
 
+  const reset = () => {
+    state.value.visibleColumns = [...defaultVisibleColumns];
+  };
+
   return {
     state,
     ...state.value,
     toggleColumnVisibility,
     isVisible,
+    reset,
   };
 };
