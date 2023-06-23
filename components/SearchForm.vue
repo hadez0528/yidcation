@@ -1,7 +1,7 @@
 <template>
-    <form class="flex flex-row ml-8 mr-auto">
+    <form class="flex flex-row ml-8 mr-auto w-full max-w-md">
         <Field @change="handleChangePhrase" name="search" type="search" placeholder="Wyszukaj coś.."
-            class="rounded-e-none w-96" :value="search.phrase" />
+            class="rounded-e-none w-full" :value="search.phrase" />
         <Field @change="handleChangeRange" is="select" name="search-range"
             class="rounded-s-none border-l border-l-gray-100">
             <option v-for="range in ['all', 'products', 'categories']" :key="range" :value="range"
