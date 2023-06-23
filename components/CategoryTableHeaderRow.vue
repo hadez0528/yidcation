@@ -1,5 +1,5 @@
 <template>
-    <TableHeadRow>
+    <TableHeadRow @settings="modal.show()">
         <TableHeadCell v-if="columnVisibility.isVisible('id')" @sort="sort.toggle('id')" class="!py-2">ID</TableHeadCell>
         <TableHeadCell v-if="columnVisibility.isVisible('name')" @sort="sort.toggle('name')" class="!py-2">Nazwa kategorii
         </TableHeadCell>
@@ -15,7 +15,6 @@
 
 <script setup lang="ts">
 const sort = useCategoriesSort()
-
+const modal = useCategoryTableColumnVisibilityModal()
 const columnVisibility = useCategoriesColumnVisibility()
-
 </script>

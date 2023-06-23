@@ -3,7 +3,9 @@
         <ProductFilterBox />
         <ProductBox />
     </NuxtLayout>
-    <ProductTableColumnVisibilitySelect />
+
+    <!-- Modals -->
+    <ProductTableColumnVisibilityModal />
 </template>
 
 <script setup lang="ts">
