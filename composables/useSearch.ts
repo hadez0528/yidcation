@@ -15,5 +15,6 @@ export const useSearch = () => {
 
   return {
     state,
+    ...state.value,
   };
 };
