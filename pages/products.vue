@@ -3,6 +3,7 @@
         <ProductFilterBox />
         <ProductBox />
     </NuxtLayout>
+    <ProductTableColumnVisibilitySelect />
 </template>
 
 <script setup lang="ts">

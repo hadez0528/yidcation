@@ -1,15 +1,17 @@
 <template>
     <TableBodyRow>
-        <TableCell>{{ id }}</TableCell>
-        <TableCell>{{ name }}</TableCell>
-        <TableCell>{{ category }}</TableCell>
-        <TableCell>{{ fitterPlace }}</TableCell>
-        <TableCell>{{ price }} PLN</TableCell>
-        <TableCell>{{ quantity }} szt.</TableCell>
+        <TableCell v-if="columnVisibility.isVisible('id')">{{ id }}</TableCell>
+        <TableCell v-if="columnVisibility.isVisible('name')">{{ name }}</TableCell>
+        <TableCell v-if="columnVisibility.isVisible('category')">{{ category }}</TableCell>
+        <TableCell v-if="columnVisibility.isVisible('fitterPlace')">{{ fitterPlace }}</TableCell>
+        <TableCell v-if="columnVisibility.isVisible('price')">{{ price }} PLN</TableCell>
+        <TableCell v-if="columnVisibility.isVisible('quantity')">{{ quantity }} szt.</TableCell>
     </TableBodyRow>
 </template>
 
 <script setup lang="ts">
+const columnVisibility = useProductsColumnVisibility()
+
 export interface Props {
     id: number,
     name: string,
