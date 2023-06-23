@@ -1,5 +1,5 @@
 <template>
-    <Field @change="handleChangeCurrency" is="select" name="currency">
+    <Field @change="handleChangeCurrency" is="select" name="currency" v-bind="$attrs">
         <option v-for="currencyCode in ['PLN', 'EUR', 'USD']" :key="currencyCode" :value="currencyCode"
             :selected="currencyCode === currency.code.value">{{ currencyCode }}
         </option>
