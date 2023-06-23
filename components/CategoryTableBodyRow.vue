@@ -4,12 +4,6 @@
         <TableCell>{{ name }}</TableCell>
         <TableCell>{{ productCount }}</TableCell>
         <TableCell>{{ createdAt }}</TableCell>
-        <TableCell>
-            <div class="flex flex-row gap-x-4 justify-end items-center h-full">
-                <IconButton iconSrc="brush.svg" />
-                <IconButton iconSrc="trash.svg" />
-            </div>
-        </TableCell>
     </TableBodyRow>
 </template>
 

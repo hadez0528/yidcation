@@ -6,9 +6,6 @@
         <TableCell>{{ fitterPlace }}</TableCell>
         <TableCell>{{ price }} PLN</TableCell>
         <TableCell>{{ quantity }} szt.</TableCell>
-        <TableCell>
-            <TableBodyRowActions />
-        </TableCell>
     </TableBodyRow>
 </template>
 
