@@ -18,5 +18,11 @@ const categories = ref([
         productCount: 16,
         createdAt: '18.02.2024',
     },
+    {
+        id: 321,
+        name: 'Koty',
+        productCount: 16,
+        createdAt: '18.02.2024',
+    },
 ])
 </script>

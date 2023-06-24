@@ -6,6 +6,7 @@
     <!-- Modals -->
     <CategoryTableColumnVisibilityModal />
     <AddCategoryModal />
+    <EditCategoryModal />
 </template>
 
 <script setup lang="ts">

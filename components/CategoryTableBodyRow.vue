@@ -1,5 +1,5 @@
 <template>
-    <TableBodyRow>
+    <TableBodyRow @edit="modal.show({ categoryId: id, initialValues })">
         <TableCell v-if="columnVisibility.isVisible('id')">{{ id }}</TableCell>
         <TableCell v-if="columnVisibility.isVisible('name')">{{ name }}</TableCell>
         <TableCell v-if="columnVisibility.isVisible('productCount')">{{ productCount }}</TableCell>
@@ -9,6 +9,7 @@
 
 <script setup lang="ts">
 const columnVisibility = useCategoriesColumnVisibility()
+const modal = useEditCategoryModal()
 
 export interface Props {
     id: number
@@ -17,5 +18,7 @@ export interface Props {
     createdAt: string
 }
 
-defineProps<Props>()
+const props = defineProps<Props>()
+
+const initialValues = ref({ name: props.name })
 </script>
