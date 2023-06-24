@@ -6,6 +6,7 @@
 
     <!-- Modals -->
     <ProductTableColumnVisibilityModal />
+    <AddProductModal />
 </template>
 
 <script setup lang="ts">
