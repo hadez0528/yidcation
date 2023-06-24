@@ -27,7 +27,7 @@ export interface Props {
     label?: string
     error?: string
     is?: "input" | "select" | "textarea",
-    defaultValue?: string
+    defaultValue?: string | number
 }
 
 const props = withDefaults(defineProps<Props>(), {
