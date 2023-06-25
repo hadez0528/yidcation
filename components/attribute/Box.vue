@@ -2,7 +2,7 @@
     <Box>
         <div class="flex flex-row align-start justify-between">
             <BoxTitle>Atrybuty</BoxTitle>
-            <PrimaryButton @click="modal.show()">Dodaj atrybut</PrimaryButton>
+            <ButtonPrimary @click="modal.show()">Dodaj atrybut</ButtonPrimary>
         </div>
         <AttributeTable class="mt-2" />
     </Box>

@@ -5,9 +5,9 @@
     </NuxtLayout>
 
     <!-- Modals -->
-    <ProductTableColumnVisibilityModal />
-    <AddProductModal />
-    <EditProductModal />
+    <ProductModalTableColumnVisibility />
+    <ProductModalEdit />
+    <ProductModalAdd />
 </template>
 
 <script setup lang="ts">

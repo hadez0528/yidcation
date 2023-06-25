@@ -3,8 +3,8 @@
         <slot></slot>
         <TableCell>
             <div class="flex flex-row gap-x-4 justify-end items-center h-full">
-                <IconButton iconSrc="brush.svg" @click="emit('edit')" />
-                <IconButton iconSrc="trash.svg" @click="emit('delete')" />
+                <ButtonIcon iconSrc="brush.svg" @click="emit('edit')" />
+                <ButtonIcon iconSrc="trash.svg" @click="emit('delete')" />
             </div>
         </TableCell>
     </TableRow>

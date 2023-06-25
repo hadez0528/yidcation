@@ -23,9 +23,9 @@
             <Field type="number" class="w-full" label="Ilość" name="quantity"
                 v-bind="initialValues?.quantity && { defaultValue: initialValues.quantity }" />
         </div>
-        <PrimaryButton type="submit">{{ submitButtonLabel }}</PrimaryButton>
-        <SecondaryButton @click="initialValues ? resetForm({ values: initialValues }) : resetForm()">Resetuj
-        </SecondaryButton>
+        <ButtonPrimary type="submit">{{ submitButtonLabel }}</ButtonPrimary>
+        <ButtonSecondary @click="initialValues ? resetForm({ values: initialValues }) : resetForm()">Resetuj
+        </ButtonSecondary>
     </Form>
 </template>
 

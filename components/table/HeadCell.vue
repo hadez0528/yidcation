@@ -4,7 +4,7 @@
             <span>
                 <slot></slot>
             </span>
-            <IconButton v-if="showSortButton" @click="emit('sort')" iconSrc="sort-column.svg" />
+            <ButtonIcon v-if="showSortButton" @click="emit('sort')" iconSrc="sort-column.svg" />
         </div>
     </TableCell>
 </template>

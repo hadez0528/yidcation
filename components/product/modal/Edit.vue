@@ -1,6 +1,6 @@
 <template>
     <Modal title="Edytuj produkt" :show="!modal.state.value.hidden" @close="modal.hide()">
-        <EditProductForm :product-id="modal.state.value.context.productId"
+        <ProductFormEdit :product-id="modal.state.value.context.productId"
             :initial-values="modal.state.value.context.initialValues" />
     </Modal>
 </template>

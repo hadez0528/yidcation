@@ -5,7 +5,7 @@
             <Box class="max-w-lg w-full flex flex-col gap-y-4">
                 <div class="flex flex-row justify-between w-full items-start">
                     <BoxTitle>{{ title }}</BoxTitle>
-                    <IconButton @click="emit('close')" class="hover:rotate-180 duration-200" icon-src="close.svg" width="24"
+                    <ButtonIcon @click="emit('close')" class="hover:rotate-180 duration-200" icon-src="close.svg" width="24"
                         height="24" />
                 </div>
                 <slot></slot>

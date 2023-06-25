@@ -4,9 +4,9 @@
     </NuxtLayout>
 
     <!-- Modals -->
-    <AttributeTableColumnVisibilityModal />
-    <AddCategoryModal />
-    <EditCategoryModal />
+    <AttributeModalAdd />
+    <AttributeModalEdit />
+    <AttributeModalTableColumnVisibility />
 </template>
 
 <script setup lang="ts">

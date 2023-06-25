@@ -4,7 +4,7 @@
             :class="{ 'bg-gray-100': isVisible(column) }" @click="emit('toggle', column)">
             <p class="normal-case">{{ column }}</p>
         </div>
-        <SecondaryButton @click="emit('reset')">Resetuj</SecondaryButton>
+        <ButtonSecondary @click="emit('reset')">Resetuj</ButtonSecondary>
     </div>
 </template>
 

@@ -1,6 +1,6 @@
 <template>
     <Modal title="Dodaj atrybut" @close="modal.hide()" :show="!modal.state.value.hidden">
-        <AddCategoryForm />
+        <AttributeFormAdd />
     </Modal>
 </template>
 

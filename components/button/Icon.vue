@@ -1,7 +1,7 @@
 <template>
-    <BaseButton class="!py-1 !px-1" v-bind="$attrs">
+    <Button class="!py-1 !px-1" v-bind="$attrs">
         <img class="w-6 h-6" style="min-width: 16px;" :src="iconSrc" width="24" height="24" />
-    </BaseButton>
+    </Button>
 </template>
 
 <script setup lang="ts">

@@ -15,8 +15,8 @@
                 <option>Zewnętrzna</option>
             </Field>
             <div class="flex flex-row gap-4 lg:flex-col">
-                <PrimaryButton class="lg:w-full w-full">Zastouj</PrimaryButton>
-                <SecondaryButton class="lg:w-full w-full">Zresetuj</SecondaryButton>
+                <ButtonPrimary class="lg:w-full w-full">Zastouj</ButtonPrimary>
+                <ButtonSecondary class="lg:w-full w-full">Zresetuj</ButtonSecondary>
             </div>
         </div>
     </Box>

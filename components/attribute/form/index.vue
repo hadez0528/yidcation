@@ -3,9 +3,9 @@
         v-slot="{ resetForm }">
         <Field type="text" label="Nazwa kategorii" name="name"
             v-bind="initialValues?.name && { defaultValue: initialValues.name }" />
-        <PrimaryButton type="submit">{{ submitButtonLabel }}</PrimaryButton>
-        <SecondaryButton @click="initialValues ? resetForm({ values: initialValues }) : resetForm()">Resetuj
-        </SecondaryButton>
+        <ButtonPrimary type="submit">{{ submitButtonLabel }}</ButtonPrimary>
+        <ButtonSecondary @click="initialValues ? resetForm({ values: initialValues }) : resetForm()">Resetuj
+        </ButtonSecondary>
     </Form>
 </template>
 

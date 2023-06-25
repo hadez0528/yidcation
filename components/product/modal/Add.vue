@@ -1,6 +1,6 @@
 <template>
     <Modal title="Dodaj produkt" @close="modal.hide()" :show="!modal.state.value.hidden">
-        <AddProductForm />
+        <ProductFormAdd />
     </Modal>
 </template>
 
