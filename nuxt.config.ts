@@ -13,4 +13,7 @@ export default defineNuxtConfig({
       linkActiveClass: "bg-secondary/90",
     },
   },
+  imports: {
+    dirs: ["composables/**"],
+  },
 });

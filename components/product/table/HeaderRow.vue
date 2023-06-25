@@ -16,7 +16,7 @@
 </template>
 
 <script setup lang="ts">
-const sort = useProductsSort()
-const modal = useProductTableColumnVisibilityModal()
-const columnVisibility = useProductsColumnVisibility()
+const sort = useProductTableSort()
+const modal = useProductModalTableColumnVisibility()
+const columnVisibility = useProductTableColumnVisibility()
 </script>

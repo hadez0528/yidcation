@@ -8,8 +8,8 @@
 </template>
 
 <script setup lang="ts">
-const columnVisibility = useCategoriesColumnVisibility()
-const modal = useEditCategoryModal()
+const columnVisibility = useAttributeTableColumnVisibility()
+const modal = useAttributeModalEdit()
 
 export interface Props {
     id: string

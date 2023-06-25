@@ -1,16 +1,16 @@
-export type ColumnVisibilityState = {
+export type TableColumnVisibilityState = {
   columns: string[];
   visibleColumns: string[];
 };
 
-export const useColumnVisibility = (
+export const useTableColumnVisibility = (
   tableName: string,
   columns: string[],
   defaultVisibleColumns: string[],
   maxVisibleColumns: number = 5,
   minVisibleColumns: number = 2
 ) => {
-  const state = useState<ColumnVisibilityState>(
+  const state = useState<TableColumnVisibilityState>(
     `${tableName}ColumnVisibility`,
     () => ({
       columns,

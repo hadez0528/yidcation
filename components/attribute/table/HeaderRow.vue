@@ -14,7 +14,7 @@
 </template>
 
 <script setup lang="ts">
-const sort = useCategoriesSort()
-const modal = useCategoryTableColumnVisibilityModal()
-const columnVisibility = useCategoriesColumnVisibility()
+const sort = useAttributeTableSort()
+const modal = useAttributeModalTableColumnVisibility()
+const columnVisibility = useAttributeTableColumnVisibility()
 </script>

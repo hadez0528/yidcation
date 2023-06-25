@@ -12,7 +12,7 @@
 <script setup lang="ts">
 import { Form } from 'vee-validate'
 
-const validationSchema = useCategoryValidationSchema()
+const validationSchema = useAttributeValidationSchema()
 
 export interface Props {
     submitButtonLabel: string

@@ -1,19 +1,19 @@
-enum SortTypes {
+enum TableSortType {
   asc,
   desc,
 }
 
-export type SortState = {
+export type TableSortState = {
   isActive: boolean;
   columnName: string | null;
-  type: SortTypes;
+  type: TableSortType;
 };
 
-export const useSort = (tableName: string) => {
-  const state = useState<SortState>(`${tableName}TableSortState`, () => ({
+export const useTableSort = (tableName: string) => {
+  const state = useState<TableSortState>(`${tableName}TableSortState`, () => ({
     columnName: null,
     isActive: false,
-    type: SortTypes.asc,
+    type: TableSortType.asc,
   }));
 
   const toggle = (columnName: string) => {
@@ -21,7 +21,7 @@ export const useSort = (tableName: string) => {
     state.value.columnName = columnName;
 
     if (columnName != state.value.columnName) {
-      state.value.type = SortTypes.asc;
+      state.value.type = TableSortType.asc;
     } else {
       state.value.type = Number(!state.value.type);
     }

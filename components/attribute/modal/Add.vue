@@ -5,5 +5,5 @@
 </template>
 
 <script setup lang="ts">
-const modal = useAddCategoryModal()
+const modal = useAttributeModalAdd()
 </script>

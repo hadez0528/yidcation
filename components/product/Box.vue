@@ -9,5 +9,5 @@
 </template>
 
 <script setup lang="ts">
-const modal = useAddProductModal()
+const modal = useProductModalAdd()
 </script>

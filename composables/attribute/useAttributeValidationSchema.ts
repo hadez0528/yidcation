@@ -1,6 +1,6 @@
 import { object, string } from "yup";
 
-export const useCategoryValidationSchema = () =>
+export const useAttributeValidationSchema = () =>
   object({
     name: string()
       .min(3, "To pole może mieć minimalnie 3 znaki")

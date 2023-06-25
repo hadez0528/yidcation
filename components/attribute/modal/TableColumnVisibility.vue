@@ -6,6 +6,6 @@
 </template>
 
 <script setup lang="ts">
-const columnVisibility = useCategoriesColumnVisibility()
-const modal = useCategoryTableColumnVisibilityModal()
+const columnVisibility = useAttributeTableColumnVisibility()
+const modal = useAttributeModalTableColumnVisibility()
 </script>

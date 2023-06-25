@@ -6,5 +6,5 @@
 </template>
 
 <script setup lang="ts">
-const modal = useEditProductModal()
+const modal = useProductModalEdit()
 </script>

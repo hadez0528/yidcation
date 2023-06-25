@@ -6,5 +6,5 @@
 </template>
 
 <script setup lang="ts">
-const modal = useEditCategoryModal()
+const modal = useAttributeModalEdit()
 </script>

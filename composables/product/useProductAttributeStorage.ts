@@ -1,5 +1,3 @@
-import { getShortId } from "../utils/getShortId";
-
 export const useProductAttributeStorage = () =>
   useStorage("productAttributes", [
     {

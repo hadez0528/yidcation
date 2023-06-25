@@ -10,10 +10,8 @@
 </template>
 
 <script setup lang="ts">
-import { useEditProductModal } from '~/composables/useEditProductModal';
-
-const columnVisibility = useProductsColumnVisibility()
-const modal = useEditProductModal()
+const columnVisibility = useProductTableColumnVisibility()
+const modal = useProductModalEdit()
 
 export interface Props {
     id: number,
