@@ -6,11 +6,13 @@ specifiers:
   autoprefixer: ^10.4.14
   nuxt: ^3.5.2
   postcss: ^8.4.24
+  shortid: ^2.2.16
   tailwindcss: ^3.3.2
   vee-validate: ^4.10.1
   yup: ^1.2.0
 
 dependencies:
+  shortid: 2.2.16
   vee-validate: 4.10.1
   yup: 1.2.0
 
@@ -4242,6 +4244,10 @@ packages:
       thenify-all: 1.6.0
     dev: true
 
+  /nanoid/2.1.11:
+    resolution: {integrity: sha512-s/snB+WGm6uwi0WjsZdaVcuf3KJXlfGl2LcxgwkEwJF0D/BWzVWAZW/XY4bFaiR7s0Jk3FPvlnepg1H1b1UwlA==}
+    dev: false
+
   /nanoid/3.3.6:
     resolution: {integrity: sha512-BGcqMMJuToF7i1rt+2PWSNVnWIkGCU78jBG3RxO/bZlnZPK2Cmi2QaffxGO/2RvWi9sL+FAiRiXMgsyxQ1DIDA==}
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
@@ -5678,6 +5684,12 @@ packages:
   /shell-quote/1.8.1:
     resolution: {integrity: sha512-6j1W9l1iAs/4xYBI1SYOVZyFcCis9b4KCLQ8fgAGG07QvzaRLVVRQvAy85yNmmZSjYjg4MWh4gNvlPujU/5LpA==}
     dev: true
+
+  /shortid/2.2.16:
+    resolution: {integrity: sha512-Ugt+GIZqvGXCIItnsL+lvFJOiN7RYqlGy7QE41O3YC1xbNSeDGIRO7xg2JJXIAj1cAGnOeC1r7/T9pgrtQbv4g==}
+    dependencies:
+      nanoid: 2.1.11
+    dev: false
 
   /signal-exit/3.0.7:
     resolution: {integrity: sha512-wnD2ZE+l+SPC/uoS0vXeE9L1+0wuaMqKlfz9AMUo38JsyLSBWSFcHR1Rri62LZc12vLr1gb3jl7iwQhgwpAbGQ==}
