@@ -1,10 +1,10 @@
 <template>
     <Box>
         <div class="flex flex-row align-start justify-between">
-            <BoxTitle>kategorie</BoxTitle>
-            <PrimaryButton @click="modal.show()">Dodaj kategorię</PrimaryButton>
+            <BoxTitle>Atrybuty</BoxTitle>
+            <PrimaryButton @click="modal.show()">Dodaj atrybut</PrimaryButton>
         </div>
-        <CategoryTable class="mt-2" />
+        <AttributeTable class="mt-2" />
     </Box>
 </template>
 

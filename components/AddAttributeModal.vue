@@ -1,5 +1,5 @@
 <template>
-    <Modal title="Dodaj kategorie" @close="modal.hide()" :show="!modal.state.value.hidden">
+    <Modal title="Dodaj atrybut" @close="modal.hide()" :show="!modal.state.value.hidden">
         <AddCategoryForm />
     </Modal>
 </template>

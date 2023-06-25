@@ -1,5 +1,5 @@
 <template>
-    <CategoryForm @submit="onSubmit" submit-button-label="Dodaj" />
+    <AttributeForm @submit="onSubmit" submit-button-label="Dodaj" />
 </template>
 
 <script setup lang="ts">

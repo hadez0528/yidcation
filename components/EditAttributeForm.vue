@@ -1,5 +1,5 @@
 <template>
-    <CategoryForm @submit="onSubmit" :initial-values="initialValues" submit-button-label="Edytuj" />
+    <AttributeForm @submit="onSubmit" :initial-values="initialValues" submit-button-label="Edytuj" />
 </template>
 
 <script setup lang="ts">

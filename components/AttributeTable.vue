@@ -1,10 +1,10 @@
 <template>
     <Table>
         <template v-slot:header>
-            <CategoryTableHeaderRow />
+            <AttributeTableHeaderRow />
         </template>
         <template v-slot:body>
-            <CategoryTableBodyRow v-for="attribute in productAttributeStorage.entities.value" :key="attribute.id"
+            <AttributeTableBodyRow v-for="attribute in productAttributeStorage.entities.value" :key="attribute.id"
                 :id="attribute.id" :name="attribute.name" :type="attribute.type" :createdAt="attribute.createdAt" />
         </template>
     </Table>

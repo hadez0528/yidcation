@@ -1,10 +1,10 @@
 <template>
-    <NuxtLayout name="categories">
-        <CategoryBox />
+    <NuxtLayout name="attributes">
+        <AttributeBox />
     </NuxtLayout>
 
     <!-- Modals -->
-    <CategoryTableColumnVisibilityModal />
+    <AttributeTableColumnVisibilityModal />
     <AddCategoryModal />
     <EditCategoryModal />
 </template>
