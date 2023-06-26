@@ -7,5 +7,7 @@ export const useAttributeValidationSchema = () =>
       .max(20, "To pole może mieć maksymalnie 20 znaków")
       .required("To pole jest wymagane"),
     type: string().required("To pole jest wymagane"),
-    values: array().required("Musisz dodać minimum jedną wartość"),
+    values: array()
+      .min(1, "Musisz dodać minimum jedną wartość")
+      .required("Musisz dodać minimum jedną wartość"),
   });
