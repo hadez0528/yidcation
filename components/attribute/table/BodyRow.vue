@@ -11,7 +11,7 @@
 <script setup lang="ts">
 const columnVisibility = useAttributeTableColumnVisibility()
 const modal = useAttributeModalEdit()
-const productAttributeStorage = useProductAttributeStorage()
+const productAttributeStorage = useAttributeStorage()
 
 export interface Props {
     id: string

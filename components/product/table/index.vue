@@ -4,22 +4,26 @@
             <ProductTableHeaderRow />
         </template>
         <template v-slot:body>
-            <ProductTableBodyRow v-for="product in products" :key="product.id" :id="product.id" :name="product.name"
-                :category="product.category" :fitterPlace="product.fitterPlace" :price="product.price"
-                :quantity="product.quantity" />
+            <TableBodyRow v-for="product in productStorage.entities.value"
+                @edit="modal.show({ productId: product.id, initialValues: { ...product } })"
+                @delete="productStorage.deleteEntity(product.id)">
+                <TableCell v-if="columnVisibility.isVisible('id')">{{ product.id }}</TableCell>
+                <TableCell v-if="columnVisibility.isVisible('name')">{{ product.name }}</TableCell>
+                <TableCell v-if="columnVisibility.isVisible('price')">{{ product.price }} PLN</TableCell>
+                <TableCell v-if="columnVisibility.isVisible('quantity')">{{ product.quantity }} szt.</TableCell>
+                <template v-for="[attributeId, attributeValue] of Object.entries(product.attributes)">
+                    <TableCell v-if="columnVisibility.isVisible(productAttributeStorage.getEntity(attributeId).name)">{{
+                        attributeValue
+                    }}</TableCell>
+                </template>
+            </TableBodyRow>
         </template>
     </Table>
 </template>
 
 <script setup lang="ts">
-const products = ref([
-    {
-        id: 123,
-        name: 'Fajny domek',
-        category: 'Psy',
-        fitterPlace: 'Ziemia',
-        price: 120,
-        quantity: 1200
-    }
-])
+const columnVisibility = useProductTableColumnVisibility()
+const modal = useProductModalEdit()
+const productStorage = useProductStorage()
+const productAttributeStorage = useAttributeStorage()
 </script>

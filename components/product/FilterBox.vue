@@ -21,7 +21,7 @@
 <script setup lang="ts">
 import { Form } from 'vee-validate'
 
-const productAttributeStorage = useProductAttributeStorage()
+const productAttributeStorage = useAttributeStorage()
 const filter = useFilter()
 
 const handleChange = (e: any, attributeId: string) => {

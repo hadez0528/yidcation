@@ -42,6 +42,7 @@ export const useTableColumnVisibility = (
   return {
     state,
     ...state.value,
+    defaultVisibleColumns,
     toggleColumnVisibility,
     isVisible,
     reset,

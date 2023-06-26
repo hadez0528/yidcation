@@ -3,7 +3,7 @@
 </template>
 
 <script setup lang="ts">
-const productAttributeStorage = useProductAttributeStorage()
+const productAttributeStorage = useAttributeStorage()
 const modal = useAttributeModalEdit()
 
 export interface Props {

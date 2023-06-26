@@ -1,10 +1,10 @@
-export const useProductAttributeStorage = () =>
+export const useAttributeStorage = () =>
   useStorage("productAttributes", [
     {
       id: getShortId(),
       name: "Kategoria",
       type: "select",
-      valueIndex: 0,
+      valueIndex: null,
       values: ["Psy", "Koty", "Sarny", "Szczury"],
       createdAt: getCurrentDateString(),
     },
@@ -12,7 +12,7 @@ export const useProductAttributeStorage = () =>
       id: getShortId(),
       name: "Izolacja",
       type: "select",
-      valueIndex: 0,
+      valueIndex: null,
       values: ["Wewnętrzna", "Zewnętrzna"],
       createdAt: getCurrentDateString(),
     },
@@ -20,7 +20,7 @@ export const useProductAttributeStorage = () =>
       id: getShortId(),
       name: "Miejsce montażu",
       type: "select",
-      valueIndex: 0,
+      valueIndex: null,
       values: ["Ziemia", "Drzewo"],
       createdAt: getCurrentDateString(),
     },

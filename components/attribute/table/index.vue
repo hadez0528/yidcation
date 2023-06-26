@@ -12,5 +12,5 @@
 </template>
 
 <script setup lang="ts">
-const productAttributeStorage = useProductAttributeStorage()
+const productAttributeStorage = useAttributeStorage()
 </script>

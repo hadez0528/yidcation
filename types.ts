@@ -1,10 +1,12 @@
+export type ProductAttributes = { [attributeId: string]: string };
+
 export type Product = {
   id: string;
   name: string;
   description: string;
   price: number;
   quantity: number;
-  attributes: ProductAttribute[];
+  attributes: ProductAttributes;
   createdAt: string;
 };
 
@@ -15,7 +17,6 @@ export type ProductAttribute = {
   id: string;
   name: string;
   type: ProductAttributeType;
-  valueIndex: number;
   values: ProductAttributeValue[];
   createdAt: string;
 };

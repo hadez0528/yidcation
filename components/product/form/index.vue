@@ -1,22 +1,14 @@
 <template>
     <Form @submit="values => emit('submit', values)" :validation-schema="validationSchema" class="flex flex-col gap-4"
-        v-slot="{ resetForm }">
-        <Field type="text" label="Nazwa produktu" name="name"
-            v-bind="initialValues?.name && { defaultValue: initialValues.name }" />
+        v-slot="{ resetForm, errors, setFieldValue, meta }">
+        <Field type="text" label="Nazwa" name="name" v-bind="initialValues?.name && { defaultValue: initialValues.name }" />
         <Field style="max-height: 256px; min-height: 64px;" is="textarea" label="Opis" name="description"
-            v-bind="initialValues?.description && { defaultValue: initialValues.description }" />
-        <div class="flex flex-row gap-4">
-            <Field class="w-full" is="select" label="Kategoria" name="category">
-                <option value="2312">Psy</option>
-            </Field>
-            <Field class="w-full" is="select" label="Miejsce montażu" name="fitterPlace">
-                <option value="2312">Ziemia</option>
-            </Field>
-            <Field class="w-full" is="select" label="Izolacja" default-value="" name="isolation">
-                <option value="2312">Wewnętrzna</option>
-                <option value="" selected>Brak</option>
-            </Field>
-        </div>
+            :defaultValue="initialValues.description" />
+
+        <p class="text-md font-bold text-tertiary">Atrybuty</p>
+        <ProductAttributeFields :defaultAttributes="initialValues?.attributes ? initialValues.attributes : {}"
+            @updateAttributes="(updatedValues) => setFieldValue('attributes', updatedValues)" />
+
         <div class="flex flex-row gap-4">
             <Field type="number" class="w-full" label="Cena" name="price"
                 v-bind="initialValues?.price && { defaultValue: initialValues.price }" />
@@ -33,21 +25,24 @@
 import { Form } from 'vee-validate'
 
 const validationSchema = useProductValidationSchema()
+const attributeStorage = useAttributeStorage()
 
 export interface Props {
     submitButtonLabel: string,
     initialValues?: {
         name?: string,
         description?: string,
-        category?: string
-        fitterPlace?: string,
-        isolation?: string
         price?: number
+        attributes?: ProductAttributes
         quantity?: number
     }
 }
 
-defineProps<Props>()
+const props = withDefaults(defineProps<Props>(), {
+    initialValues: {
+        description: "",
+    }
+})
 
 const emit = defineEmits<{ submit: [any] }>()
 </script>

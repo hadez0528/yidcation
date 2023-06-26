@@ -1,15 +1,15 @@
-import { object, string, number } from "yup";
+import { object, string, number, array } from "yup";
 
-export const useProductValidationSchema = () =>
-  object({
+export const useProductValidationSchema = () => {
+  const attributeStorage = useAttributeStorage();
+  const attributesCount = attributeStorage.entities.value.length;
+
+  const properties = {
     name: string()
-      .min(20, "To pole nie może mieć mniej niż 20 znaków")
+      .min(10, "To pole nie może mieć mniej niż 10 znaków")
       .max(50, "To pole nie może mieć więcej niż 50 znaków")
       .required("To pole jest wymagane"),
     description: string(),
-    category: string().required("To pole jest wymagane"),
-    fitterPlace: string().required("To pole jest wymagane"),
-    isolation: string().nullable(),
     price: number()
       .typeError("To pole musi być liczbą")
       .min(1, "To pole może mieć minimalną wartość 1")
@@ -20,4 +20,17 @@ export const useProductValidationSchema = () =>
       .min(0, "To pole może mieć minimalną wartość 0")
       .max(9999, "To pole może mieć maksymalną wartość 9999")
       .required("To pole jest wymagane"),
+    attributes: array()
+      .min(
+        attributesCount,
+        `To pole musi zawierać minimum ${attributesCount} wartości`
+      )
+      .required(`To pole musi zawierać minimum ${attributesCount} wartości`),
+  };
+
+  attributeStorage.entities.value.forEach((attribute) => {
+    properties[attribute.name] = string().required("To pole jest wymagane");
   });
+
+  return object(properties);
+};
