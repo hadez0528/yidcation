@@ -8,8 +8,8 @@ export type Product = {
   createdAt: string;
 };
 
-export type ProductAttributeType = "text" | "number" | "select";
-export type ProductAttributeValue = "text" | "number";
+export type ProductAttributeType = "select";
+export type ProductAttributeValue = "string";
 
 export type ProductAttribute = {
   id: string;

@@ -1,5 +1,5 @@
 <template>
-    <TableBodyRow @edit="modal.show({ categoryId: id, initialValues })">
+    <TableBodyRow @edit="modal.show({ attributeId: id, initialValues: { name, type, values } })">
         <TableCell v-if="columnVisibility.isVisible('id')">{{ id }}</TableCell>
         <TableCell v-if="columnVisibility.isVisible('name')">{{ name }}</TableCell>
         <TableCell v-if="columnVisibility.isVisible('type')">{{ type }}</TableCell>
@@ -15,10 +15,9 @@ export interface Props {
     id: string
     name: string
     type: ProductAttributeType
+    values: string[]
     createdAt: string
 }
 
 const props = defineProps<Props>()
-
-const initialValues = ref({ name: props.name })
 </script>
