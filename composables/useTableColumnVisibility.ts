@@ -22,15 +22,14 @@ export const useTableColumnVisibility = (
     state.value.visibleColumns.includes(columnName);
 
   const toggleColumnVisibility = (columnName: string) => {
-    if (isVisible(columnName)) {
-      if (state.value.visibleColumns.length <= minVisibleColumns) return;
-
+    if (
+      isVisible(columnName) &&
+      state.value.visibleColumns.length <= minVisibleColumns
+    ) {
       state.value.visibleColumns = state.value.visibleColumns.filter(
         (value) => value != columnName
       );
-    } else {
-      if (state.value.visibleColumns.length > maxVisibleColumns) return;
-
+    } else if (state.value.visibleColumns.length < maxVisibleColumns) {
       state.value.visibleColumns.push(columnName);
     }
   };
