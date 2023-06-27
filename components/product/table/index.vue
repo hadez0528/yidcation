@@ -27,14 +27,12 @@ const modal = useProductModalEdit()
 const productStorage = useProductStorage()
 const productAttributeStorage = useAttributeStorage()
 const filter = useFilter()
+const tableSort = useProductTableSort()
 
 const productSource = ref([...productStorage.entities.value])
 
-watch(filter.state.value, () => {
-    if (filter.state.value.isActive) {
-        productSource.value = productStorage.getFilteredProducts()
-    } else {
-        productSource.value = productStorage.entities.value
-    }
+watch([productStorage.entities.value, filter.state.value, tableSort.state.value], () => {
+    productSource.value = filter.state.value.isActive ? productStorage.getFilteredProducts() : productStorage.entities.value
+    tableSort.state.value.isActive && productSource.value.sort(tableSort.compareFunc)
 }, { deep: true })
 </script>
