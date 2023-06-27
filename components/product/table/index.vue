@@ -4,7 +4,7 @@
             <ProductTableHeaderRow />
         </template>
         <template v-slot:body>
-            <TableBodyRow v-for="product in productStorage.entities.value"
+            <TableBodyRow v-for="product in productSource"
                 @edit="modal.show({ productId: product.id, initialValues: { ...product } })"
                 @delete="productStorage.deleteEntity(product.id)">
                 <TableCell v-if="columnVisibility.isVisible('id')">{{ product.id }}</TableCell>
@@ -26,4 +26,15 @@ const columnVisibility = useProductTableColumnVisibility()
 const modal = useProductModalEdit()
 const productStorage = useProductStorage()
 const productAttributeStorage = useAttributeStorage()
+const filter = useFilter()
+
+const productSource = ref([...productStorage.entities.value])
+
+watch(filter.state.value, () => {
+    if (filter.state.value.isActive) {
+        productSource.value = productStorage.getFilteredProducts()
+    } else {
+        productSource.value = productStorage.entities.value
+    }
+}, { deep: true })
 </script>

@@ -1,10 +1,11 @@
 import shortid from "shortid";
 
 export const useProductStorage = () => {
-  const productAttributeStorage = useAttributeStorage();
+  const filter = useFilter();
+  const attributeStorage = useAttributeStorage();
 
   const defaultAttributes = {};
-  for (let attribute of productAttributeStorage.entities.value) {
+  for (let attribute of attributeStorage.entities.value) {
     defaultAttributes[attribute.id] = attribute.values[0];
   }
 
@@ -20,5 +21,21 @@ export const useProductStorage = () => {
     },
   ]);
 
-  return productStorage;
+  const getFilteredProducts = () => {
+    const products = productStorage.entities.value.filter((product) => {
+      for (let [attributeId, attributeValue] of Object.entries(
+        filter.state.value.filters
+      )) {
+        if (attributeValue !== product.attributes[attributeId]) return false;
+      }
+      return true;
+    });
+
+    return products;
+  };
+
+  return {
+    ...productStorage,
+    getFilteredProducts,
+  };
 };
