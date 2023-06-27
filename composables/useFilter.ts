@@ -4,7 +4,7 @@ export interface FilterState {
 }
 
 export const useFilter = () => {
-  const state = useState<FilterState>("filterState", () => ({
+  const state = useState<FilterState>("filter", () => ({
     filters: {},
     isActive: false,
   }));
