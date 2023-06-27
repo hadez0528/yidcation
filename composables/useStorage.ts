@@ -24,6 +24,9 @@ export const useStorage = <T extends K>(
   const getEntity = (entityId: string) =>
     entities.value.find((entity) => entity.id === entityId);
 
+  const getEntityByName = (entityName: string) =>
+    entities.value.find((entity) => entity.name === entityName);
+
   const updateEntity = (entity: T) => {
     deleteEntity(entity.id);
     createEntity(entity);
@@ -35,6 +38,7 @@ export const useStorage = <T extends K>(
     deleteEntity,
     getEntities,
     getEntity,
+    getEntityByName,
     updateEntity,
   };
 };
