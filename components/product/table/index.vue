@@ -31,7 +31,7 @@ const tableSort = useProductTableSort()
 
 const productSource = ref([...productStorage.entities.value])
 
-watch([productStorage.entities.value, filter.state.value, tableSort.state.value], () => {
+watch([productStorage.entities, filter.state, tableSort.state], () => {
     productSource.value = filter.state.value.isActive ? productStorage.getFilteredProducts() : productStorage.entities.value
     tableSort.state.value.isActive && productSource.value.sort(tableSort.compareFunc)
 }, { deep: true })
