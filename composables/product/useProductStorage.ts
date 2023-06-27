@@ -19,6 +19,15 @@ export const useProductStorage = () => {
       attributes: defaultAttributes,
       createdAt: getCurrentDateString(),
     },
+    {
+      id: shortid(),
+      name: "Domek dwuczęściowy kolorowy",
+      description: "Fajny domek",
+      price: 1111,
+      quantity: 900,
+      attributes: defaultAttributes,
+      createdAt: getCurrentDateString(),
+    },
   ]);
 
   const getFilteredProducts = () => {
