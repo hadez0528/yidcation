@@ -8,8 +8,6 @@ export const useProductTableSort = () => {
       ? entity.attributes[tableSort.state.value.attributeKey]
       : entity[tableSort.state.value.attributeKey];
 
-    console.log(tableSort.state.value.attributeKey, value, entity);
-
     return value;
   });
 
