@@ -15,7 +15,7 @@
 const tableSort = useAttributeTableSort()
 const attributeStorage = useAttributeStorage()
 
-watch([attributeStorage.entities.value, tableSort.state.value], () => {
+watch([attributeStorage.entities, tableSort.state], () => {
     tableSort.state.value.isActive && attributeStorage.entities.value.sort(tableSort.compareFunc)
 }, { deep: true })
 </script>
