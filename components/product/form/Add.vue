@@ -3,6 +3,7 @@
 </template>
 
 <script setup lang="ts">
+const modal = useProductModalAdd()
 const productStorage = useProductStorage()
 
 const onSubmit = (values) => {
@@ -20,5 +21,6 @@ const onSubmit = (values) => {
     }
 
     productStorage.createEntity(product)
+    modal.hide()
 }
 </script>
