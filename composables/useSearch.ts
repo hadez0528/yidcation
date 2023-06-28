@@ -8,6 +8,9 @@ export type SearchState = {
   range: SearchRange;
 };
 
+const productResults = ref([]);
+const attributeResults = ref([]);
+
 export const useSearch = () => {
   const router = useRouter();
   const state = useState<SearchState>("search", () => ({
@@ -17,9 +20,6 @@ export const useSearch = () => {
   }));
   const productStorage = useProductStorage();
   const attributeStorage = useAttributeStorage();
-
-  const productResults = ref([]);
-  const attributeResults = ref([]);
 
   const fuseFactory = <T>(source: T[], options: Fuse.IFuseOptions<T>) =>
     new Fuse(source, options);
