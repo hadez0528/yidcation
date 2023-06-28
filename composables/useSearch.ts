@@ -49,12 +49,19 @@ export const useSearch = () => {
     state.value.isActive = false;
   };
 
+  const mapResults = (results: Fuse.FuseResult<Product | ProductAttribute>[]) =>
+    results.map((result) => result.item);
+
   const setProductResults = () => {
-    productResults.value = productFuseFactory().search(state.value.phrase);
+    productResults.value = mapResults(
+      productFuseFactory().search(state.value.phrase)
+    );
   };
 
   const setAttributeResults = () => {
-    attributeResults.value = attributeFuseFactory().search(state.value.phrase);
+    attributeResults.value = mapResults(
+      attributeFuseFactory().search(state.value.phrase)
+    );
   };
 
   watch(

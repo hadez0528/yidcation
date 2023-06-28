@@ -4,8 +4,8 @@
         <p v-if="search.productResults.value.length === 0" class="text-l mt-8 normalcase text-gray-400">Brak wyników
             wyszukiwania</p>
         <div v-else class="mt-8 flex flex-col gap-y-4">
-            <SearchResultItem v-for="result in search.productResults.value" @click="editProduct(result.item.id)"
-                :key="result.item.id" :id="result.item.id" :name="result.item.name" />
+            <SearchResultItem v-for="product in search.productResults.value" @click="editProduct(product.id)"
+                :key="product.id" :id="product.id" :name="product.name" />
         </div>
     </Box>
     <Box class="w-full">
@@ -13,8 +13,8 @@
         <p v-if="search.attributeResults.value.length === 0" class="text-l mt-8 normalcase text-gray-400">Brak wyników
             wyszukiwania</p>
         <div v-else class="mt-8 flex flex-col gap-y-4">
-            <SearchResultItem v-for="result in search.attributeResults.value" :id="result.item.id"
-                @click="editAttribute(result.item.id)" :key="result.item.id" :name="result.item.name" />
+            <SearchResultItem v-for="attribute in search.attributeResults.value" :id="attribute.id"
+                @click="editAttribute(attribute.id)" :key="attribute.id" :name="attribute.name" />
         </div>
     </Box>
 </template>
