@@ -47,41 +47,42 @@ export const useSearch = () => {
     attributeResults.value = [];
     state.value.phrase = "";
     state.value.isActive = false;
-    state.value.range = "all";
+  };
+
+  const setProductResults = () => {
+    productResults.value = productFuseFactory().search(state.value.phrase);
+  };
+
+  const setAttributeResults = () => {
+    attributeResults.value = attributeFuseFactory().search(state.value.phrase);
   };
 
   watch(
-    [() => state.value.isActive, () => state.value.phrase],
+    [
+      () => state.value.isActive,
+      () => state.value.phrase,
+      () => state.value.range,
+    ],
     () => {
       if (state.value.isActive) {
         switch (state.value.range) {
           case "all":
+            setProductResults();
+            setAttributeResults();
             router.push({ path: "/search" });
-            productResults.value = productFuseFactory().search(
-              state.value.phrase
-            );
-            attributeResults.value = attributeFuseFactory().search(
-              state.value.phrase
-            );
             break;
           case "products":
+            setProductResults();
             router.push({ path: "/products" });
-            productResults.value = productFuseFactory().search(
-              state.value.phrase
-            );
             break;
           case "attributes":
+            setAttributeResults();
             router.push({ path: "/attributes" });
-            attributeResults.value = attributeFuseFactory().search(
-              state.value.phrase
-            );
             break;
         }
       }
-
       if (state.value.phrase.length === 0) reset();
-    },
-    { deep: true }
+    }
   );
 
   return {
