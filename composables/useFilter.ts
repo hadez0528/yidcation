@@ -27,9 +27,19 @@ export const useFilter = () => {
     state.value.isActive = false;
   };
 
+  const filterFunc = (product: Product) => {
+    for (let [attributeId, attributeValue] of Object.entries(
+      state.value.filters
+    )) {
+      if (attributeValue !== product.attributes[attributeId]) return false;
+    }
+    return true;
+  };
+
   return {
     state,
     setFilter,
     resetFilter,
+    filterFunc,
   };
 };
