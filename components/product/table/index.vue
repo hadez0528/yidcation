@@ -28,11 +28,23 @@ const productStorage = useProductStorage()
 const productAttributeStorage = useAttributeStorage()
 const filter = useFilter()
 const tableSort = useProductTableSort()
+const search = useSearch()
 
 const productSource = ref([...productStorage.entities.value])
 
-watch([productStorage.entities, filter.state, tableSort.state], () => {
-    productSource.value = filter.state.value.isActive ? productStorage.getFilteredProducts() : productStorage.entities.value
-    tableSort.state.value.isActive && productSource.value.sort(tableSort.compareFunc)
+watch(tableSort.state, () => {
+    productSource.value.sort(tableSort.compareFunc)
+}, { deep: true })
+
+watch([productStorage.entities, search.productResults, filter.state], () => {
+    if (search.state.value.isActive) {
+        productSource.value = [...search.productResults.value]
+    } else {
+        productSource.value = [...productStorage.entities.value]
+    }
+
+    if (filter.state.value.isActive) {
+        productSource.value = productSource.value.filter(filter.filterFunc)
+    }
 }, { deep: true })
 </script>
