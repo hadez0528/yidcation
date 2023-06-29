@@ -1,7 +1,7 @@
 <template>
     <Field @change="handleChangeCurrency" is="select" name="currency" v-bind="$attrs">
         <option v-for="currencyCode in ['PLN', 'EUR', 'USD']" :key="currencyCode" :value="currencyCode"
-            :selected="currencyCode === currency.code.value">{{ currencyCode }}
+            :selected="currencyCode === currency.state.value.code">{{ currencyCode }}
         </option>
     </Field>
 </template>
@@ -10,6 +10,6 @@
 const currency = useCurrency()
 
 const handleChangeCurrency = (e: any) => {
-    currency.code.value = e.target.value
+    currency.state.value.code = e.target.value
 }
 </script>

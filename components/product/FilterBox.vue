@@ -20,8 +20,8 @@
 <script setup lang="ts">
 import { Form } from 'vee-validate'
 
-const attributeStorage = useAttributeStorage()
 const filter = useFilter()
+const attributeStorage = useAttributeStorage()
 
 const handleChange = (e: any, attributeId: string) => {
     filter.setFilter(attributeId, e.target.value)
