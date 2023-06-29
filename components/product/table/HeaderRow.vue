@@ -16,7 +16,7 @@ const columnVisibility = useProductTableColumnVisibility()
 const attributeStorage = useAttributeStorage()
 
 const handleToggleSort = (attributeKey: string) => {
-    if (['name', 'price', 'quantity'].includes(attributeKey)) {
+    if (['name', 'price', 'quantity', 'createdAt'].includes(attributeKey)) {
         tableSort.byDynamicAttribute.value = false
         tableSort.toggle(attributeKey)
     } else {

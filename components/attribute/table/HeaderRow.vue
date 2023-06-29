@@ -8,7 +8,8 @@
         <TableHeadCell v-if="columnVisibility.isVisible('type')" @sort="tableSort.toggle('type')" class=" !py-2">
             Typ
         </TableHeadCell>
-        <TableHeadCell v-if="columnVisibility.isVisible('createdAt')" class="!py-2">Data
+        <TableHeadCell v-if="columnVisibility.isVisible('createdAt')" @sort="tableSort.toggle('createdAt')" class="!py-2">
+            Data
             utworzenia
         </TableHeadCell>
     </TableHeadRow>

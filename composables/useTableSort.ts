@@ -17,7 +17,7 @@ export const useTableSort = (tableName: string) => {
   }));
 
   const compareFuncFactory =
-    <T>(getValueFunc: (entity: T) => string | number) =>
+    <T>(getValueFunc: (entity: T) => string | number | Date) =>
     (a: T, b: T) => {
       const aValue = getValueFunc(a);
       const bValue = getValueFunc(b);
@@ -45,6 +45,12 @@ export const useTableSort = (tableName: string) => {
       return 0;
     };
 
+  const compareDateStringFuncFactory = <T extends { createdAt: string }>() =>
+    compareFuncFactory<T>((entity) => {
+      const [year, month, day] = entity.createdAt.split("-");
+      return new Date(Number(year), Number(month) - 1, Number(day));
+    });
+
   const toggle = (attributeKey: string) => {
     state.value.isActive = true;
     state.value.attributeKey = attributeKey;
@@ -56,5 +62,6 @@ export const useTableSort = (tableName: string) => {
     ...state.value,
     toggle,
     compareFuncFactory,
+    compareDateStringFuncFactory,
   };
 };

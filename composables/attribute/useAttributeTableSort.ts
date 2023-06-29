@@ -5,8 +5,12 @@ export const useAttributeTableSort = () => {
     (entity) => entity[tableSort.state.value.attributeKey]
   );
 
+  const compareDateStringFunc =
+    tableSort.compareDateStringFuncFactory<ProductAttribute>();
+
   return {
     ...tableSort,
     compareFunc,
+    compareDateStringFunc,
   };
 };

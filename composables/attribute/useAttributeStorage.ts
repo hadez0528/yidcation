@@ -6,7 +6,7 @@ export const useAttributeStorage = () =>
       type: "select",
       valueIndex: null,
       values: ["Psy", "Koty", "Sarny", "Szczury"],
-      createdAt: getCurrentDateString(),
+      createdAt: "2023-05-19",
     },
     {
       id: getShortId(),

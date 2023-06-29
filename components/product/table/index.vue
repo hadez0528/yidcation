@@ -36,7 +36,7 @@ const currency = useCurrency()
 const productSource = ref([...productStorage.entities.value])
 
 watch(tableSort.state, () => {
-    productSource.value.sort(tableSort.compareFunc)
+    productSource.value.sort(tableSort.state.value.attributeKey === 'createdAt' ? tableSort.compareDateStringFunc : tableSort.compareFunc)
 }, { deep: true })
 
 watch([productStorage.entities, search.productResults, filter.state], () => {

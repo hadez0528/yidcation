@@ -18,7 +18,7 @@ const attributeStorage = useAttributeStorage()
 const attributeSource = ref([...attributeStorage.entities.value])
 
 watch(tableSort.state, () => {
-    attributeSource.value.sort(tableSort.compareFunc)
+    attributeSource.value.sort(tableSort.state.value.attributeKey === 'createdAt' ? tableSort.compareDateStringFunc : tableSort.compareFunc)
 }, { deep: true })
 
 watch([attributeStorage.entities, search.attributeResults], () => {
