@@ -7,14 +7,17 @@ export type CurrencyState = {
   exchangeRate: number;
 };
 
-const exchangeRate = ref(1);
+const exchangeRate = ref<number>(1);
 
 export const useCurrency = (defaultCurrencyCode: CurrencyCode = "PLN") => {
   const getExchangeRate = (currencyCode: CurrencyCode) =>
     fetch(`https://api.exchangerate-api.com/v4/latest/PLN`)
       .then((res) => res.json())
-      .then((data) => Number.parseFloat(data.rates[currencyCode]).toFixed(2))
+      .then((data) => data.rates[currencyCode])
       .catch((err) => console.error(err));
+
+  const convertPrice = (price: number) =>
+    Number.parseFloat(price * exchangeRate.value).toFixed(2);
 
   const state = useState<CurrencyState>("currency", () => ({
     code: defaultCurrencyCode,
@@ -29,6 +32,6 @@ export const useCurrency = (defaultCurrencyCode: CurrencyCode = "PLN") => {
 
   return {
     state,
-    exchangeRate,
+    convertPrice,
   };
 };

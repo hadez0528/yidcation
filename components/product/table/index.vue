@@ -9,7 +9,7 @@
                 @delete="productStorage.deleteEntity(product.id)">
                 <TableCell v-if="columnVisibility.isVisible('id')">{{ product.id }}</TableCell>
                 <TableCell v-if="columnVisibility.isVisible('name')">{{ product.name }}</TableCell>
-                <TableCell v-if="columnVisibility.isVisible('price')">{{ product.price * currency.exchangeRate.value }} {{
+                <TableCell v-if="columnVisibility.isVisible('price')">{{ currency.convertPrice(product.price) }} {{
                     currency.state.value.code }}</TableCell>
                 <TableCell v-if="columnVisibility.isVisible('quantity')">{{ product.quantity }} szt.</TableCell>
                 <template v-for="[attributeId, attributeValue] of Object.entries(product.attributes)">
