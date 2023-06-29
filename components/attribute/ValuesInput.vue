@@ -8,10 +8,10 @@
                 <Field class="w-full" type="text" placeholder="Podaj wartość" :name="`value-${valueIndex}`"
                     :default-value="value" @focusout="(e) => checkValue(e, valueIndex)"
                     @change="changeValue($event.target.value, valueIndex)" />
-                <ButtonIcon @click="removeValue(valueIndex)" iconSrc="trash.svg" type="button" />
+                <ButtonIcon @click="removeValue(valueIndex)" iconSrc="/trash.svg" type="button" />
             </div>
             <ButtonIcon @click="addValue()" type="button" class="border rounded border-gray-100 !py-4 hover:bg-gray-100"
-                iconSrc="plus-box.svg" />
+                iconSrc="/plus-box.svg" />
         </div>
     </div>
 </template>
