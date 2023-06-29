@@ -1,7 +1,10 @@
 <template>
     <Box class="lg:w-96 w-full" v-bind="$attrs">
-        <BoxTitle>filtry</BoxTitle>
-        <Form v-slot="{ resetForm }" class="mt-4 flex flex-col gap-y-4">
+        <div class="flex items-start justify-between">
+            <BoxTitle>filtry</BoxTitle>
+            <ButtonText @click="handleToggle">{{ isHidden ? 'Pokaż' : 'Ukryj' }}</ButtonText>
+        </div>
+        <Form v-show="!isHidden" v-slot="{ resetForm }" class="mt-4 flex flex-col gap-y-4">
             <Field @change="(e: any) => handleChange(e, attribute.id)"
                 v-for=" attribute  in  attributeStorage.entities.value " is="select" :name="attribute.name"
                 :label="attribute.name">
@@ -23,7 +26,11 @@ import { Form } from 'vee-validate'
 const filter = useFilter()
 const attributeStorage = useAttributeStorage()
 
+const isHidden = ref(false)
+
 const handleChange = (e: any, attributeId: string) => {
     filter.setFilter(attributeId, e.target.value)
 }
+
+const handleToggle = () => isHidden.value = !isHidden.value
 </script>
