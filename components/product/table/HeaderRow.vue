@@ -3,7 +3,7 @@
         <template v-for="column in columnVisibility.state.value.columns" :key="column">
             <TableHeadCell v-if="columnVisibility.isVisible(column)" :show-sort-button="column !== 'id'"
                 @sort="() => handleToggleSort(column)" class="!py-2">
-                {{ column }}
+                {{ convertNonDynamicColumnName(column) }}
             </TableHeadCell>
         </template>
     </TableHeadRow>
