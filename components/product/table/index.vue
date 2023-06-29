@@ -12,12 +12,12 @@
                 <TableCell v-if="columnVisibility.isVisible('price')">{{ currency.convertPrice(product.price) }} {{
                     currency.state.value.code }}</TableCell>
                 <TableCell v-if="columnVisibility.isVisible('quantity')">{{ product.quantity }} szt.</TableCell>
+                <TableCell v-if="columnVisibility.isVisible('createdAt')">{{ product.createdAt }}</TableCell>
                 <template v-for="[attributeId, attributeValue] of Object.entries(product.attributes)">
                     <TableCell v-if="columnVisibility.isVisible(productAttributeStorage.getEntity(attributeId).name)">{{
                         attributeValue
                     }}</TableCell>
                 </template>
-                <TableCell v-if="columnVisibility.isVisible('createdAt')">{{ product.createdAt }}</TableCell>
             </TableBodyRow>
         </template>
     </Table>
