@@ -2,7 +2,7 @@
     <Box class="lg:w-96 w-full" v-bind="$attrs">
         <div class="flex items-start justify-between">
             <BoxTitle>filtry</BoxTitle>
-            <ButtonText @click="handleToggle">{{ isHidden ? 'Pokaż' : 'Ukryj' }}</ButtonText>
+            <ButtonText class="lg:hidden" @click="handleToggle">{{ isHidden ? 'Pokaż' : 'Ukryj' }}</ButtonText>
         </div>
         <Form v-show="!isHidden" v-slot="{ resetForm }" class="mt-4 flex flex-col gap-y-4">
             <Field @change="(e: any) => handleChange(e, attribute.id)"
