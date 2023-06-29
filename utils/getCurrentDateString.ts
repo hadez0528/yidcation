@@ -4,7 +4,5 @@ export const getCurrentDateString = () => {
   const month = date.getMonth() + 1;
   const dayOfMonth = date.getDate();
 
-  return `${date.getFullYear()}-${
-    month < 10 ? `0${month}` : `${month}`
-  }-${dayOfMonth}`;
+  return `${year}-${month < 10 ? `0${month}` : `${month}`}-${dayOfMonth}`;
 };
