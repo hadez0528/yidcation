@@ -1,20 +1,22 @@
 export const useProductTableColumnVisibility = () => {
   const productAttributeStorage = useAttributeStorage();
 
-  const attributeNames = productAttributeStorage.entities.value.map(
-    (attribute) => attribute.name
-  );
+  const attributeNames = computed(() => {
+    return productAttributeStorage.entities.value.map(
+      (attribute) => attribute.name
+    );
+  });
 
   const columnVisibility = useTableColumnVisibility(
     "product",
-    ["id", "name", "price", "quantity"],
-    ["id", "name", "price", "quantity"],
+    ["id", "name", "price", "quantity", "createdAt"],
+    ["id", "name", "price", "quantity", "createdAt"],
     6
   );
 
   columnVisibility.state.value.columns = [
     ...columnVisibility.defaultVisibleColumns,
-    ...attributeNames,
+    ...attributeNames.value,
   ];
 
   return columnVisibility;

@@ -17,6 +17,7 @@
                         attributeValue
                     }}</TableCell>
                 </template>
+                <TableCell v-if="columnVisibility.isVisible('createdAt')">{{ product.createdAt }}</TableCell>
             </TableBodyRow>
         </template>
     </Table>
