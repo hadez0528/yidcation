@@ -1,4 +1,4 @@
-export const convertNonDynamicColumnName = (columnName: string) => {
+export const translateColumnName = (columnName: string) => {
   const t = {
     id: "ID",
     name: "Nazwa",
