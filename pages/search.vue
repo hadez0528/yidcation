@@ -6,6 +6,6 @@
 
 <script setup lang="ts">
 useHead({
-  title: "AnimalHouses - Search",
+  title: "Animal-Houses - Search",
 });
 </script>

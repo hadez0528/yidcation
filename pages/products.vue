@@ -12,6 +12,6 @@
 
 <script setup lang="ts">
 useHead({
-  title: "AnimalHouses - Products",
+  title: "Animal-Houses - Products",
 });
 </script>

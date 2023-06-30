@@ -11,6 +11,6 @@
 
 <script setup lang="ts">
 useHead({
-  title: "AnimalHouses - Attributes",
+  title: "Animal-Houses - Attributes",
 });
 </script>
