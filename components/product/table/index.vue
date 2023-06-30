@@ -37,7 +37,7 @@
           <TableCell
             v-if="
               columnVisibility.isVisible(
-                productAttributeStorage.getEntity(attributeId).name
+                attributeStorage.getEntity(attributeId).name
               )
             "
             >{{ attributeValue }}</TableCell
@@ -52,7 +52,7 @@
 const columnVisibility = useProductTableColumnVisibility();
 const modal = useProductModalEdit();
 const productStorage = useProductStorage();
-const productAttributeStorage = useAttributeStorage();
+const attributeStorage = useAttributeStorage();
 const filter = useFilter();
 const tableSort = useProductTableSort();
 const search = useSearch();
