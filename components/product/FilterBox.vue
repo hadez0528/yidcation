@@ -1,5 +1,5 @@
 <template>
-  <Box class="lg:w-96 w-full" v-bind="$attrs">
+  <Box class="lg:w-96 w-full h-min" v-bind="$attrs">
     <div class="flex items-start justify-between">
       <BoxTitle>filtry</BoxTitle>
       <ButtonText class="lg:hidden" @click="handleToggle">{{
@@ -11,19 +11,21 @@
       v-slot="{ resetForm }"
       class="mt-4 flex flex-col gap-y-4"
     >
-      <Field
-        is="select"
-        v-for="attribute in attributeStorage.entities.value"
-        :key="attribute.id"
-        :name="attribute.name"
-        :label="attribute.name"
-        @change="(e: any) => handleChange(e, attribute.id)"
-      >
-        <option value="" selected>Dowolna wartość</option>
-        <option v-for="value in attribute.values" :key="value" :value="value">
-          {{ value }}
-        </option>
-      </Field>
+      <div class="mt-4 flex flex-col gap-y-4 max-h-96 overflow-y-auto">
+        <Field
+          is="select"
+          v-for="attribute in attributeStorage.entities.value"
+          :key="attribute.id"
+          :name="attribute.name"
+          :label="attribute.name"
+          @change="(e: any) => handleChange(e, attribute.id)"
+        >
+          <option value="" selected>Dowolna wartość</option>
+          <option v-for="value in attribute.values" :key="value" :value="value">
+            {{ value }}
+          </option>
+        </Field>
+      </div>
 
       <div class="flex flex-row gap-4 lg:flex-col">
         <ButtonSecondary
