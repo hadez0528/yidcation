@@ -1,5 +1,5 @@
 <template>
-  <Box>
+  <Box class="pb-0">
     <div class="flex flex-row align-start justify-between">
       <BoxTitle>Atrybuty</BoxTitle>
       <ButtonPrimary @click="modal.show()">Dodaj atrybut</ButtonPrimary>
