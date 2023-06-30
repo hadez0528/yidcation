@@ -7,8 +7,8 @@ export const useTableColumnVisibility = (
   tableName: string,
   columns: string[],
   defaultVisibleColumns: string[],
-  maxVisibleColumns: number = 5,
-  minVisibleColumns: number = 2
+  maxVisibleColumns = 5,
+  minVisibleColumns = 2
 ) => {
   const state = useState<TableColumnVisibilityState>(
     `${tableName}ColumnVisibility`,
@@ -27,7 +27,7 @@ export const useTableColumnVisibility = (
       state.value.visibleColumns.length > minVisibleColumns
     ) {
       state.value.visibleColumns = state.value.visibleColumns.filter(
-        (value) => value != columnName
+        (value) => value !== columnName
       );
     } else if (
       !isVisible(columnName) &&

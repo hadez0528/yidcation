@@ -1,5 +1,3 @@
-import { resolve } from "path";
-
 export type CurrencyCode = "PLN" | "EUR" | "USD";
 
 export type CurrencyState = {
@@ -14,7 +12,7 @@ export const useCurrency = (defaultCurrencyCode: CurrencyCode = "PLN") => {
     fetch(`https://api.exchangerate-api.com/v4/latest/PLN`)
       .then((res) => res.json())
       .then((data) => data.rates[currencyCode])
-      .catch((err) => console.error(err));
+      .catch(() => 1);
 
   const convertPrice = (price: number) =>
     Number.parseFloat(price * exchangeRate.value).toFixed(2);

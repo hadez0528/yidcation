@@ -22,7 +22,7 @@ export const useTableSort = (tableName: string) => {
       const aValue = getValueFunc(a);
       const bValue = getValueFunc(b);
 
-      if (state.value.type == TableSortType.asc) {
+      if (state.value.type === TableSortType.asc) {
         if (aValue > bValue) {
           return 1;
         }

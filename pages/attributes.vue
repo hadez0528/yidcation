@@ -1,16 +1,7 @@
-<template>
-    <NuxtLayout name="attributes">
-        <AttributeBox />
-    </NuxtLayout>
-
-    <!-- Modals -->
-    <AttributeModalAdd />
-    <AttributeModalEdit />
-    <AttributeModalTableColumnVisibility />
-</template>
+<template></template>
 
 <script setup lang="ts">
 useHead({
-    title: 'AnimalHouses - Attributes'
-})
+  title: "AnimalHouses - Attributes",
+});
 </script>

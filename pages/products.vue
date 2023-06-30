@@ -1,17 +1,17 @@
 <template>
-    <NuxtLayout name="products">
-        <ProductFilterBox />
-        <ProductBox />
-    </NuxtLayout>
+  <NuxtLayout name="products">
+    <ProductFilterBox />
+    <ProductBox />
+  </NuxtLayout>
 
-    <!-- Modals -->
-    <ProductModalTableColumnVisibility />
-    <ProductModalEdit />
-    <ProductModalAdd />
+  <!-- Modals -->
+  <ProductModalTableColumnVisibility />
+  <ProductModalEdit />
+  <ProductModalAdd />
 </template>
 
 <script setup lang="ts">
 useHead({
-    title: 'AnimalHouses - Products'
-})
+  title: "AnimalHouses - Products",
+});
 </script>

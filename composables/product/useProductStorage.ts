@@ -4,7 +4,7 @@ export const useProductStorage = () => {
   const attributeStorage = useAttributeStorage();
 
   const defaultAttributes = {};
-  for (let attribute of attributeStorage.entities.value) {
+  for (const attribute of attributeStorage.entities.value) {
     defaultAttributes[attribute.id] = attribute.values[0];
   }
 

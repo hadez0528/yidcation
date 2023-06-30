@@ -10,10 +10,7 @@ export const useFilter = () => {
   }));
 
   const setFilter = (attributeId: string, attributeValue: string) => {
-    if (
-      attributeValue === "" &&
-      state.value.filters.hasOwnProperty(attributeId)
-    ) {
+    if (attributeValue === "" && attributeId in state.value.filters) {
       delete state.value.filters[attributeId];
     } else if (attributeValue !== "") {
       state.value.filters[attributeId] = attributeValue;
@@ -28,7 +25,7 @@ export const useFilter = () => {
   };
 
   const filterFunc = (product: Product) => {
-    for (let [attributeId, attributeValue] of Object.entries(
+    for (const [attributeId, attributeValue] of Object.entries(
       state.value.filters
     )) {
       if (attributeValue !== product.attributes[attributeId]) return false;

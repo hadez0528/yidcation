@@ -7,5 +7,5 @@ export const translateColumnName = (columnName: string) => {
     createdAt: "Data utworzenia",
     type: "Typ",
   };
-  return t.hasOwnProperty(columnName) ? t[columnName] : columnName;
+  return columnName in t ? t[columnName] : columnName;
 };

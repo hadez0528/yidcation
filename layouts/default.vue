@@ -1,7 +1,7 @@
 <template>
-    <div>
-        <Nav />
-        <Menu />
-        <slot />
-    </div>
+  <div>
+    <Nav />
+    <Menu />
+    <slot />
+  </div>
 </template>

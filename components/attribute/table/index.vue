@@ -1,31 +1,50 @@
 <template>
-    <Table>
-        <template v-slot:header>
-            <AttributeTableHeaderRow />
-        </template>
-        <template v-slot:body>
-            <AttributeTableBodyRow v-for="attribute in attributeSource" :key="attribute.id" :id="attribute.id"
-                :values="attribute.values" :name="attribute.name" :type="attribute.type" :createdAt="attribute.createdAt" />
-        </template>
-    </Table>
+  <Table>
+    <template #header>
+      <AttributeTableHeaderRow />
+    </template>
+    <template #body>
+      <AttributeTableBodyRow
+        v-for="attribute in attributeSource"
+        :id="attribute.id"
+        :key="attribute.id"
+        :values="attribute.values"
+        :name="attribute.name"
+        :type="attribute.type"
+        :created-at="attribute.createdAt"
+      />
+    </template>
+  </Table>
 </template>
 
 <script setup lang="ts">
-const search = useSearch()
-const tableSort = useAttributeTableSort()
-const attributeStorage = useAttributeStorage()
+const search = useSearch();
+const tableSort = useAttributeTableSort();
+const attributeStorage = useAttributeStorage();
 
-const attributeSource = ref([...attributeStorage.entities.value])
+const attributeSource = ref([...attributeStorage.entities.value]);
 
-watch(tableSort.state, () => {
-    attributeSource.value.sort(tableSort.state.value.attributeKey === 'createdAt' ? tableSort.compareDateStringFunc : tableSort.compareFunc)
-}, { deep: true })
+watch(
+  tableSort.state,
+  () => {
+    attributeSource.value.sort(
+      tableSort.state.value.attributeKey === "createdAt"
+        ? tableSort.compareDateStringFunc
+        : tableSort.compareFunc
+    );
+  },
+  { deep: true }
+);
 
-watch([attributeStorage.entities, search.attributeResults], () => {
+watch(
+  [attributeStorage.entities, search.attributeResults],
+  () => {
     if (search.state.value.isActive) {
-        attributeSource.value = [...search.attributeResults.value]
+      attributeSource.value = [...search.attributeResults.value];
     } else {
-        attributeSource.value = [...attributeStorage.entities.value]
+      attributeSource.value = [...attributeStorage.entities.value];
     }
-}, { deep: true })
+  },
+  { deep: true }
+);
 </script>

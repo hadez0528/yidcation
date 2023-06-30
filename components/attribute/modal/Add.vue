@@ -1,9 +1,13 @@
 <template>
-    <Modal title="Dodaj atrybut" @close="modal.hide()" :show="!modal.state.value.hidden">
-        <AttributeFormAdd />
-    </Modal>
+  <Modal
+    title="Dodaj atrybut"
+    :show="!modal.state.value.hidden"
+    @close="modal.hide()"
+  >
+    <AttributeFormAdd />
+  </Modal>
 </template>
 
 <script setup lang="ts">
-const modal = useAttributeModalAdd()
+const modal = useAttributeModalAdd();
 </script>
