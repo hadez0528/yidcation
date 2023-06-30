@@ -1,5 +1,5 @@
 <template>
-  <Box class="w-full">
+  <Box class="w-full h-min">
     <BoxTitle>produkty</BoxTitle>
     <p
       v-if="search.productResults.value.length === 0"
@@ -7,7 +7,7 @@
     >
       Brak wyników wyszukiwania
     </p>
-    <div v-else class="mt-8 flex flex-col gap-y-4">
+    <div v-else class="mt-4 flex flex-col gap-y-4">
       <SearchResultItem
         v-for="product in search.productResults.value"
         :id="product.id"
@@ -17,15 +17,15 @@
       />
     </div>
   </Box>
-  <Box class="w-full">
+  <Box class="w-full h-min">
     <BoxTitle>atrybuty</BoxTitle>
     <p
       v-if="search.attributeResults.value.length === 0"
-      class="text-l mt-8 normalcase text-gray-400"
+      class="text-l mt-4 normalcase text-gray-400"
     >
       Brak wyników wyszukiwania
     </p>
-    <div v-else class="mt-8 flex flex-col gap-y-4">
+    <div v-else class="mt-4 flex flex-col gap-y-4">
       <SearchResultItem
         v-for="attribute in search.attributeResults.value"
         :id="attribute.id"
