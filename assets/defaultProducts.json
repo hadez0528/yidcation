@@ -1,0 +1,382 @@
+[
+  {
+    "id": "p5KjL8m",
+    "name": "Domek dla zwierząt 1",
+    "description": "Opis domku dla zwierząt 1",
+    "price": 129.99,
+    "quantity": 50,
+    "createdAt": "2023-06-30",
+    "attributes": {
+      "s1AsBd2": "Termiczna",
+      "k3RtDf4": "Duży",
+      "t5GhJu6": "Koty",
+      "m1KlZx9": "Drewno sosnowe",
+      "w9VbNm0": "Kwadratowy",
+      "z2XcVb4": "Ziemia",
+      "p5MnCv8": "Naturalna",
+      "g8BhNj2": "Zielony",
+      "q1WzXv4": "Gruba"
+    }
+  },
+  {
+    "id": "f9GhM3n",
+    "name": "Domek dla zwierząt 2",
+    "description": "Opis domku dla zwierząt 2",
+    "price": 149.99,
+    "quantity": 30,
+    "createdAt": "2023-06-29",
+    "attributes": {
+      "s1AsBd2": "Akustyczna",
+      "k3RtDf4": "Średni",
+      "t5GhJu6": "Sarny",
+      "m1KlZx9": "Tworzywo sztuczne",
+      "w9VbNm0": "Prostokątny",
+      "z2XcVb4": "Drzewo",
+      "p5MnCv8": "Mechaniczna",
+      "g8BhNj2": "Czerwony",
+      "q1WzXv4": "Średnia"
+    }
+  },
+  {
+    "id": "r7ZxY0p",
+    "name": "Domek dla zwierząt 3",
+    "description": "Opis domku dla zwierząt 3",
+    "price": 109.99,
+    "quantity": 20,
+    "createdAt": "2023-06-28",
+    "attributes": {
+      "s1AsBd2": "Termiczna",
+      "k3RtDf4": "Mały",
+      "t5GhJu6": "Ptaki",
+      "m1KlZx9": "Drewno sosnowe",
+      "w9VbNm0": "Owalny",
+      "z2XcVb4": "Ziemia",
+      "p5MnCv8": "Mechaniczna",
+      "g8BhNj2": "Niebieski",
+      "q1WzXv4": "Cienka"
+    }
+  },
+  {
+    "id": "c2VbN4m",
+    "name": "Domek dla zwierząt 4",
+    "description": "Opis domku dla zwierząt 4",
+    "price": 159.99,
+    "quantity": 15,
+    "createdAt": "2023-06-27",
+    "attributes": {
+      "s1AsBd2": "Akustyczna",
+      "k3RtDf4": "Duży",
+      "t5GhJu6": "Króliki",
+      "m1KlZx9": "Metal",
+      "w9VbNm0": "Prostokątny",
+      "z2XcVb4": "Drzewo",
+      "p5MnCv8": "Naturalna",
+      "g8BhNj2": "Żółty",
+      "q1WzXv4": "Gruba"
+    }
+  },
+  {
+    "id": "d6BhJ8z",
+    "name": "Domek dla zwierząt 5",
+    "description": "Opis domku dla zwierząt 5",
+    "price": 139.99,
+    "quantity": 40,
+    "createdAt": "2023-06-26",
+    "attributes": {
+      "s1AsBd2": "Termiczna",
+      "k3RtDf4": "Duży",
+      "t5GhJu6": "Chomiki",
+      "m1KlZx9": "Drewno sosnowe",
+      "w9VbNm0": "Kwadratowy",
+      "z2XcVb4": "Ziemia",
+      "p5MnCv8": "Mechaniczna",
+      "g8BhNj2": "Szary",
+      "q1WzXv4": "Gruba"
+    }
+  },
+  {
+    "id": "h9NmC4x",
+    "name": "Domek dla zwierząt 6",
+    "description": "Opis domku dla zwierząt 6",
+    "price": 119.99,
+    "quantity": 25,
+    "createdAt": "2023-06-25",
+    "attributes": {
+      "s1AsBd2": "Akustyczna",
+      "k3RtDf4": "Średni",
+      "t5GhJu6": "Żółwie",
+      "m1KlZx9": "Tworzywo sztuczne",
+      "w9VbNm0": "Prostokątny",
+      "z2XcVb4": "Ziemia",
+      "p5MnCv8": "Naturalna",
+      "g8BhNj2": "Różowy",
+      "q1WzXv4": "Średnia"
+    }
+  },
+  {
+    "id": "a3KlP2o",
+    "name": "Domek dla zwierząt 7",
+    "description": "Opis domku dla zwierząt 7",
+    "price": 129.99,
+    "quantity": 60,
+    "createdAt": "2023-06-24",
+    "attributes": {
+      "s1AsBd2": "Termiczna",
+      "k3RtDf4": "Duży",
+      "t5GhJu6": "Fretki",
+      "m1KlZx9": "Bambus",
+      "w9VbNm0": "Owalny",
+      "z2XcVb4": "Ziemia",
+      "p5MnCv8": "Mechaniczna",
+      "g8BhNj2": "Pomarańczowy",
+      "q1WzXv4": "Cienka"
+    }
+  },
+  {
+    "id": "y6MjK8l",
+    "name": "Domek dla zwierząt 8",
+    "description": "Opis domku dla zwierząt 8",
+    "price": 149.99,
+    "quantity": 35,
+    "createdAt": "2023-06-23",
+    "attributes": {
+      "s1AsBd2": "Akustyczna",
+      "k3RtDf4": "Średni",
+      "t5GhJu6": "Psy",
+      "m1KlZx9": "Drewno bukowe",
+      "w9VbNm0": "Kwadratowy",
+      "z2XcVb4": "Drzewo",
+      "p5MnCv8": "Naturalna",
+      "g8BhNj2": "Fioletowy",
+      "q1WzXv4": "Średnia"
+    }
+  },
+  {
+    "id": "x5LmN9z",
+    "name": "Domek dla zwierząt 9",
+    "description": "Opis domku dla zwierząt 9",
+    "price": 109.99,
+    "quantity": 18,
+    "createdAt": "2023-06-22",
+    "attributes": {
+      "s1AsBd2": "Termiczna",
+      "k3RtDf4": "Mały",
+      "t5GhJu6": "Koty",
+      "m1KlZx9": "Drewno sosnowe",
+      "w9VbNm0": "Prostokątny",
+      "z2XcVb4": "Drzewo",
+      "p5MnCv8": "Mechaniczna",
+      "g8BhNj2": "Brązowy",
+      "q1WzXv4": "Gruba"
+    }
+  },
+  {
+    "id": "b1ZxC7v",
+    "name": "Domek dla zwierząt 10",
+    "description": "Opis domku dla zwierząt 10",
+    "price": 159.99,
+    "quantity": 10,
+    "createdAt": "2023-06-30",
+    "attributes": {
+      "s1AsBd2": "Akustyczna",
+      "k3RtDf4": "Duży",
+      "t5GhJu6": "Sarny",
+      "m1KlZx9": "Tworzywo sztuczne",
+      "w9VbNm0": "Prostokątny",
+      "z2XcVb4": "Ziemia",
+      "p5MnCv8": "Naturalna",
+      "g8BhNj2": "Zielony",
+      "q1WzXv4": "Cienka"
+    }
+  },
+  {
+    "id": "v8CxK2b",
+    "name": "Domek dla zwierząt 11",
+    "description": "Opis domku dla zwierząt 11",
+    "price": 139.99,
+    "quantity": 45,
+    "createdAt": "2023-06-29",
+    "attributes": {
+      "s1AsBd2": "Termiczna",
+      "k3RtDf4": "Duży",
+      "t5GhJu6": "Ptaki",
+      "m1KlZx9": "Drewno sosnowe",
+      "w9VbNm0": "Owalny",
+      "z2XcVb4": "Ziemia",
+      "p5MnCv8": "Mechaniczna",
+      "g8BhNj2": "Niebieski",
+      "q1WzXv4": "Gruba"
+    }
+  },
+  {
+    "id": "n4VbM9c",
+    "name": "Domek dla zwierząt 12",
+    "description": "Opis domku dla zwierząt 12",
+    "price": 119.99,
+    "quantity": 22,
+    "createdAt": "2023-06-28",
+    "attributes": {
+      "s1AsBd2": "Akustyczna",
+      "k3RtDf4": "Średni",
+      "t5GhJu6": "Chomiki",
+      "m1KlZx9": "Drewno sosnowe",
+      "w9VbNm0": "Kwadratowy",
+      "z2XcVb4": "Ziemia",
+      "p5MnCv8": "Naturalna",
+      "g8BhNj2": "Różowy",
+      "q1WzXv4": "Średnia"
+    }
+  },
+  {
+    "id": "m7NjB6x",
+    "name": "Domek dla zwierząt 13",
+    "description": "Opis domku dla zwierząt 13",
+    "price": 129.99,
+    "quantity": 55,
+    "createdAt": "2023-06-27",
+    "attributes": {
+      "s1AsBd2": "Termiczna",
+      "k3RtDf4": "Duży",
+      "t5GhJu6": "Żółwie",
+      "m1KlZx9": "Bambus",
+      "w9VbNm0": "Owalny",
+      "z2XcVb4": "Ziemia",
+      "p5MnCv8": "Mechaniczna",
+      "g8BhNj2": "Pomarańczowy",
+      "q1WzXv4": "Cienka"
+    }
+  },
+  {
+    "id": "z2XcV4n",
+    "name": "Domek dla zwierząt 14",
+    "description": "Opis domku dla zwierząt 14",
+    "price": 149.99,
+    "quantity": 40,
+    "createdAt": "2023-06-26",
+    "attributes": {
+      "s1AsBd2": "Akustyczna",
+      "k3RtDf4": "Średni",
+      "t5GhJu6": "Fretki",
+      "m1KlZx9": "Metal",
+      "w9VbNm0": "Prostokątny",
+      "z2XcVb4": "Drzewo",
+      "p5MnCv8": "Naturalna",
+      "g8BhNj2": "Szary",
+      "q1WzXv4": "Gruba"
+    }
+  },
+  {
+    "id": "q9WzX2v",
+    "name": "Domek dla zwierząt 15",
+    "description": "Opis domku dla zwierząt 15",
+    "price": 119.99,
+    "quantity": 28,
+    "createdAt": "2023-06-25",
+    "attributes": {
+      "s1AsBd2": "Termiczna",
+      "k3RtDf4": "Mały",
+      "t5GhJu6": "Króliki",
+      "m1KlZx9": "Drewno bukowe",
+      "w9VbNm0": "Kwadratowy",
+      "z2XcVb4": "Drzewo",
+      "p5MnCv8": "Mechaniczna",
+      "g8BhNj2": "Żółty",
+      "q1WzXv4": "Cienka"
+    }
+  },
+  {
+    "id": "w8VcB1k",
+    "name": "Domek dla zwierząt 16",
+    "description": "Opis domku dla zwierząt 16",
+    "price": 159.99,
+    "quantity": 12,
+    "createdAt": "2023-06-24",
+    "attributes": {
+      "s1AsBd2": "Akustyczna",
+      "k3RtDf4": "Duży",
+      "t5GhJu6": "Sarny",
+      "m1KlZx9": "Tworzywo sztuczne",
+      "w9VbNm0": "Prostokątny",
+      "z2XcVb4": "Ziemia",
+      "p5MnCv8": "Naturalna",
+      "g8BhNj2": "Zielony",
+      "q1WzXv4": "Gruba"
+    }
+  },
+  {
+    "id": "k4ZxN3m",
+    "name": "Domek dla zwierząt 17",
+    "description": "Opis domku dla zwierząt 17",
+    "price": 139.99,
+    "quantity": 38,
+    "createdAt": "2023-06-23",
+    "attributes": {
+      "s1AsBd2": "Termiczna",
+      "k3RtDf4": "Średni",
+      "t5GhJu6": "Chomiki",
+      "m1KlZx9": "Drewno sosnowe",
+      "w9VbNm0": "Owalny",
+      "z2XcVb4": "Ziemia",
+      "p5MnCv8": "Mechaniczna",
+      "g8BhNj2": "Niebieski",
+      "q1WzXv4": "Gruba"
+    }
+  },
+  {
+    "id": "t1GhJ5b",
+    "name": "Domek dla zwierząt 18",
+    "description": "Opis domku dla zwierząt 18",
+    "price": 119.99,
+    "quantity": 20,
+    "createdAt": "2023-06-22",
+    "attributes": {
+      "s1AsBd2": "Akustyczna",
+      "k3RtDf4": "Średni",
+      "t5GhJu6": "Psy",
+      "m1KlZx9": "Drewno bukowe",
+      "w9VbNm0": "Kwadratowy",
+      "z2XcVb4": "Drzewo",
+      "p5MnCv8": "Naturalna",
+      "g8BhNj2": "Fioletowy",
+      "q1WzXv4": "Średnia"
+    }
+  },
+  {
+    "id": "r2FtK4d",
+    "name": "Domek dla zwierząt 19",
+    "description": "Opis domku dla zwierząt 19",
+    "price": 109.99,
+    "quantity": 15,
+    "createdAt": "2023-06-30",
+    "attributes": {
+      "s1AsBd2": "Termiczna",
+      "k3RtDf4": "Mały",
+      "t5GhJu6": "Koty",
+      "m1KlZx9": "Drewno sosnowe",
+      "w9VbNm0": "Prostokątny",
+      "z2XcVb4": "Ziemia",
+      "p5MnCv8": "Mechaniczna",
+      "g8BhNj2": "Brązowy",
+      "q1WzXv4": "Cienka"
+    }
+  },
+  {
+    "id": "u3DfG9e",
+    "name": "Domek dla zwierząt 20",
+    "description": "Opis domku dla zwierząt 20",
+    "price": 159.99,
+    "quantity": 8,
+    "createdAt": "2023-06-29",
+    "attributes": {
+      "s1AsBd2": "Akustyczna",
+      "k3RtDf4": "Duży",
+      "t5GhJu6": "Sarny",
+      "m1KlZx9": "Metal",
+      "w9VbNm0": "Owalny",
+      "z2XcVb4": "Ziemia",
+      "p5MnCv8": "Naturalna",
+      "g8BhNj2": "Różowy",
+      "q1WzXv4": "Cienka"
+    }
+  }
+]

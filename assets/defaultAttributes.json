@@ -1,0 +1,95 @@
+[
+  {
+    "id": "s1AsBd2",
+    "name": "Izolacja",
+    "type": "select",
+    "values": ["Termiczna", "Akustyczna"],
+    "createdAt": "2023-06-30"
+  },
+  {
+    "id": "k3RtDf4",
+    "name": "Rozmiar",
+    "type": "select",
+    "values": ["Mały", "Średni", "Duży"],
+    "createdAt": "2023-06-29"
+  },
+  {
+    "id": "t5GhJu6",
+    "name": "Przeznaczenie",
+    "type": "select",
+    "values": [
+      "Psy",
+      "Koty",
+      "Sarny",
+      "Ptaki",
+      "Króliki",
+      "Chomiki",
+      "Żółwie",
+      "Fretki"
+    ],
+    "createdAt": "2023-06-28"
+  },
+  {
+    "id": "m1KlZx9",
+    "name": "Materiał",
+    "type": "select",
+    "values": [
+      "Drewno sosnowe",
+      "Tworzywo sztuczne",
+      "Metal",
+      "Bambus",
+      "Drewno bukowe"
+    ],
+    "createdAt": "2023-06-30"
+  },
+  {
+    "id": "w9VbNm0",
+    "name": "Kształt wejścia",
+    "type": "select",
+    "values": ["Owalny", "Kwadratowy", "Prostokątny"],
+    "createdAt": "2023-06-26"
+  },
+  {
+    "id": "z2XcVb4",
+    "name": "Miejsce montażu",
+    "type": "select",
+    "values": ["Ziemia", "Drzewo"],
+    "createdAt": "2023-06-25"
+  },
+  {
+    "id": "p5MnCv8",
+    "name": "Wentylacja",
+    "type": "select",
+    "values": ["Naturalna", "Mechaniczna"],
+    "createdAt": "2023-06-24"
+  },
+  {
+    "id": "g8BhNj2",
+    "name": "Kolor",
+    "type": "select",
+    "values": [
+      "Czerwony",
+      "Zielony",
+      "Niebieski",
+      "Żółty",
+      "Szary",
+      "Różowy",
+      "Pomarańczowy",
+      "Fioletowy",
+      "Brązowy",
+      "Biały",
+      "Czarny",
+      "Turkusowy",
+      "Złoty",
+      "Srebrny"
+    ],
+    "createdAt": "2023-06-23"
+  },
+  {
+    "id": "q1WzXv4",
+    "name": "Grubość ścian",
+    "type": "select",
+    "values": ["Cienka", "Średnia", "Gruba"],
+    "createdAt": "2023-06-22"
+  }
+]
