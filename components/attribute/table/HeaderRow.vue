@@ -3,7 +3,6 @@
         <TableHeadCell v-if="columnVisibility.isVisible('id')" @sort="tableSort.toggle('id')" class="!py-2"
             :show-sort-button="false">ID</TableHeadCell>
         <TableHeadCell v-if="columnVisibility.isVisible('name')" @sort="tableSort.toggle('name')" class="!py-2">Nazwa
-            atrybutu
         </TableHeadCell>
         <TableHeadCell v-if="columnVisibility.isVisible('type')" @sort="tableSort.toggle('type')" class=" !py-2">
             Typ
