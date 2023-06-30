@@ -58,7 +58,6 @@ export interface Props {
   defaultValue?: string | number;
 }
 
-// This eslint rules are considerable
 const props = withDefaults(defineProps<Props>(), {
   is: "input",
   label: null,
