@@ -11,13 +11,9 @@ export const useProductTableSort = () => {
     return value;
   });
 
-  const compareDateStringFunc =
-    tableSort.compareDateStringFuncFactory<Product>();
-
   return {
     ...tableSort,
     compareFunc,
-    compareDateStringFunc,
     byDynamicAttribute,
   };
 };
