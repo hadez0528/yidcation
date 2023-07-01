@@ -7,7 +7,7 @@
 </template>
 
 <script setup lang="ts">
-const productAttributeStorage = useAttributeStorage();
+const attributeStorage = useAttributeStorage();
 const modal = useAttributeModalEdit();
 
 export interface Props {
@@ -22,7 +22,7 @@ export interface Props {
 const props = defineProps<Props>();
 
 const onSubmit = (values) => {
-  productAttributeStorage.updateEntity({
+  attributeStorage.updateEntity({
     id: props.attributeId,
     name: values.name,
     type: values.type,

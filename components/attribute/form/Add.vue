@@ -4,9 +4,9 @@
 
 <script setup lang="ts">
 const modal = useAttributeModalAdd();
-const productAttributeStorage = useAttributeStorage();
+const attributeStorage = useAttributeStorage();
 const onSubmit = (values) => {
-  productAttributeStorage.createEntity({
+  attributeStorage.createEntity({
     name: values.name,
     type: values.type,
     values: values.values,

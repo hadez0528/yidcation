@@ -3,7 +3,7 @@
     @edit="
       modal.show({ attributeId: id, initialValues: { name, type, values } })
     "
-    @delete="productAttributeStorage.deleteEntity(id)"
+    @delete="attributeStorage.deleteEntity(id)"
   >
     <TableCell v-if="columnVisibility.isVisible('id')">{{ id }}</TableCell>
     <TableCell v-if="columnVisibility.isVisible('name')">{{ name }}</TableCell>
@@ -17,7 +17,7 @@
 <script setup lang="ts">
 const columnVisibility = useAttributeTableColumnVisibility();
 const modal = useAttributeModalEdit();
-const productAttributeStorage = useAttributeStorage();
+const attributeStorage = useAttributeStorage();
 
 export interface Props {
   id: string;
