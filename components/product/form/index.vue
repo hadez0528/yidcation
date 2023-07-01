@@ -25,7 +25,7 @@
         initialValues?.attributes ? initialValues.attributes : {}
       "
       @update-attributes="
-        (updatedValues) => setFieldValue('attributes', updatedValues)
+        (updatedAttributes) => setFieldValue('attributes', updatedAttributes)
       "
     />
 
