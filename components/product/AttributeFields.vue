@@ -32,7 +32,7 @@
 const attributeStorage = useAttributeStorage();
 
 export interface Props {
-  defaultAttributes: ProductAttributes[];
+  defaultAttributes: ProductAttributes;
 }
 
 const props = defineProps<Props>();
