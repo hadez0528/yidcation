@@ -45,12 +45,6 @@ export const useTableSort = (tableName: string) => {
       return 0;
     };
 
-  const compareDateStringFuncFactory = <T extends { createdAt: string }>() =>
-    compareFuncFactory<T>((entity) => {
-      const [year, month, day] = entity.createdAt.split("-");
-      return new Date(Number(year), Number(month) - 1, Number(day));
-    });
-
   const compareDateStringFunc = compareFuncFactory<{ createdAt: string }>(
     (entity) => {
       const [year, month, day] = entity.createdAt.split("-");
