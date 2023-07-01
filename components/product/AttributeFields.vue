@@ -32,7 +32,7 @@
 const attributeStorage = useAttributeStorage();
 
 export interface Props {
-  defaultAttributes: ProductAttributes;
+  defaultAttributes: ProductAttributes[];
 }
 
 const props = defineProps<Props>();
@@ -41,6 +41,7 @@ const emit = defineEmits<{
 }>();
 
 const attributes = ref<ProductAttributes>({ ...props.defaultAttributes });
+
 props.defaultAttributes &&
   emit("updateAttributes", Object.entries(attributes.value));
 
