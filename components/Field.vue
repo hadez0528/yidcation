@@ -15,12 +15,7 @@
       v-if="is !== 'select'"
       :id="id"
       :value="value"
-      :class="{
-        '!border': errorMessage,
-        '!border-red-500': errorMessage,
-        '!border-solid': errorMessage,
-        '!focus:border-red-500': errorMessage,
-      }"
+      :class="errorClasses"
       class="focus:border focus:border-secondary focus:border-solid rounded bg-gray-50 p-2 text-tertiary text-sm outline-none text-color-slate-700 border border-transparent"
       v-bind="$attrs"
       @input="handleChange"
@@ -31,12 +26,7 @@
       v-else
       :id="id"
       :value="value"
-      :class="{
-        '!border': errorMessage,
-        '!border-red-500': errorMessage,
-        '!border-solid': errorMessage,
-        '!focus:border-red-500': errorMessage,
-      }"
+      :class="errorClasses"
       class="focus:border focus:border-secondary focus:border-solid rounded text-tertiary bg-gray-50 p-2 text-sm outline-none text-color-slate-700 border border-transparent"
       v-bind="$attrs"
       @input="handleChange"
@@ -76,4 +66,13 @@ const { value, errorMessage, handleBlur, handleChange } = useField(
     initialValue: props.defaultValue,
   }
 );
+
+const errorClasses = computed(() => {
+  return {
+    "!border": errorMessage.value,
+    "!border-red-500": errorMessage.value,
+    "!border-solid": errorMessage.value,
+    "!focus:border-red-500": errorMessage.value,
+  };
+});
 </script>
