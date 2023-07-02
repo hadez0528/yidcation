@@ -7,17 +7,17 @@ export const useProductTableColumnVisibility = () => {
 
   const columnVisibility = useTableColumnVisibility(
     "product",
-    ["id", "name", "price", "quantity", "createdAt", ...attributeNames.value],
+    ["id", "name", "price", "quantity", "createdAt"],
     ["id", "name", "price", "quantity", "createdAt"],
     6
   );
 
-  watch(attributeNames, () => {
-    columnVisibility.state.value.columns = [
-      ...columnVisibility.defaultVisibleColumns,
-      ...attributeNames.value,
-    ];
+  const columns = computed(() => {
+    return [...columnVisibility.defaultVisibleColumns, ...attributeNames.value];
   });
 
-  return columnVisibility;
+  return {
+    ...columnVisibility,
+    columns,
+  };
 };
