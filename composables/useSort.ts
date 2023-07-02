@@ -1,19 +1,19 @@
-export enum TableSortType {
+export enum SortType {
   asc,
   desc,
 }
 
-export type TableSortState = {
+export type SortState = {
   isActive: boolean;
   attributeKey: string | null;
-  type: TableSortType;
+  type: SortType;
 };
 
-export const useTableSort = (tableName: string) => {
-  const state = useState<TableSortState>(`${tableName}TableSort`, () => ({
+export const useSort = (name: string) => {
+  const state = useState<SortState>(`${name}Sort`, () => ({
     attributeKey: null,
     isActive: false,
-    type: TableSortType.asc,
+    type: SortType.asc,
   }));
 
   const compareFuncFactory =
@@ -22,24 +22,12 @@ export const useTableSort = (tableName: string) => {
       const aValue = getValueFunc(a);
       const bValue = getValueFunc(b);
 
-      if (state.value.type === TableSortType.asc) {
-        if (aValue > bValue) {
-          return 1;
-        }
-
-        if (aValue < bValue) {
-          return -1;
-        }
+      if (state.value.type === SortType.asc) {
+        return aValue > bValue ? 1 : aValue < bValue ? -1 : 0;
       }
 
-      if (state.value.type === TableSortType.desc) {
-        if (aValue > bValue) {
-          return -1;
-        }
-
-        if (aValue < bValue) {
-          return 1;
-        }
+      if (state.value.type === SortType.desc) {
+        return aValue > bValue ? -1 : aValue < bValue ? 1 : 0;
       }
 
       return 0;
@@ -55,12 +43,11 @@ export const useTableSort = (tableName: string) => {
   const toggle = (attributeKey: string) => {
     state.value.isActive = true;
     state.value.attributeKey = attributeKey;
-    state.value.type = Number(!state.value.type);
+    state.value.type = Number(!state.value.type) as SortType;
   };
 
   return {
     state,
-    ...state.value,
     toggle,
     compareFuncFactory,
     compareDateStringFunc,

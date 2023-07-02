@@ -8,6 +8,7 @@
 
 <script setup lang="ts">
 const modal = useProductModalEdit();
+const productStorage = useProductStorage();
 
 export interface Props {
   productId: string;
@@ -17,14 +18,13 @@ export interface Props {
     price: number;
     quantity: number;
     attributes: ProductAttributes;
+    createdAt: string;
   };
 }
 
 const props = defineProps<Props>();
 
 const onSubmit = (values) => {
-  const productStorage = useProductStorage();
-
   const product = {
     id: props.productId,
     name: values.name,
@@ -32,6 +32,7 @@ const onSubmit = (values) => {
     price: values.price,
     quantity: values.quantity,
     attributes: {},
+    createdAt: props.initialValues.createdAt,
   };
 
   for (const attribute of values.attributes) {

@@ -5,26 +5,29 @@ export type CurrencyState = {
   exchangeRate: number;
 };
 
-const exchangeRate = ref<number>(1);
-
 export const useCurrency = (defaultCurrencyCode: CurrencyCode = "PLN") => {
   const state = useState<CurrencyState>("currency", () => ({
     code: defaultCurrencyCode,
+    exchangeRate: 1,
   }));
 
-  const getExchangeRate = (currencyCode: CurrencyCode) =>
-    fetch(`https://api.exchangerate-api.com/v4/latest/PLN`)
-      .then((res) => res.json())
-      .then((data) => data.rates[currencyCode])
-      .catch(() => 1);
+  const getExchangeRate = async (currencyCode: CurrencyCode) => {
+    try {
+      const res = await fetch(`https://api.exchangerate-api.com/v4/latest/PLN`);
+      const data = await res.json();
+      return data.rates[currencyCode];
+    } catch (error) {
+      return 1;
+    }
+  };
 
   const convertPrice = (price: number) =>
-    Number.parseFloat(price * exchangeRate.value).toFixed(2);
+    Number.parseFloat(price * state.value.exchangeRate).toFixed(2);
 
   watch(
     () => state.value.code,
     async () => {
-      exchangeRate.value = await getExchangeRate(state.value.code);
+      state.value.exchangeRate = await getExchangeRate(state.value.code);
     }
   );
 

@@ -8,12 +8,14 @@ export const useStorage = <T extends K>(
     ...defaultEntities,
   ]);
 
-  const createEntity = (entity: Omit<T, "id" | "createdAt">) =>
-    entities.value.push({
+  const createEntity = (entity: Omit<T, "id" | "createdAt">) => {
+    const newEntity: T = {
       id: getShortId(),
       createdAt: getCurrentDateString(),
       ...entity,
-    });
+    };
+    entities.value.push(newEntity);
+  };
 
   const deleteEntity = (entityId: string) => {
     entities.value = entities.value.filter((entity) => entity.id !== entityId);
@@ -28,8 +30,10 @@ export const useStorage = <T extends K>(
     entities.value.find((entity) => entity.name === entityName);
 
   const updateEntity = (entity: T) => {
-    deleteEntity(entity.id);
-    createEntity(entity);
+    const index = entities.value.findIndex((e) => e.id === entity.id);
+    if (index !== -1) {
+      entities.value.splice(index, 1, entity);
+    }
   };
 
   return {

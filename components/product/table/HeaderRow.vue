@@ -17,18 +17,18 @@
 </template>
 
 <script setup lang="ts">
-const tableSort = useProductTableSort();
+const sort = useProductSort();
 const modal = useProductModalTableColumnVisibility();
 const columnVisibility = useProductTableColumnVisibility();
 const attributeStorage = useAttributeStorage();
 
 const handleToggleSort = (attributeKey: string) => {
   if (["name", "price", "quantity", "createdAt"].includes(attributeKey)) {
-    tableSort.byDynamicAttribute.value = false;
-    tableSort.toggle(attributeKey);
+    sort.byDynamicAttribute.value = false;
+    sort.toggle(attributeKey);
   } else {
-    tableSort.byDynamicAttribute.value = true;
-    tableSort.toggle(attributeStorage.getEntityByName(attributeKey).id);
+    sort.byDynamicAttribute.value = true;
+    sort.toggle(attributeStorage.getEntityByName(attributeKey).id);
   }
 };
 </script>

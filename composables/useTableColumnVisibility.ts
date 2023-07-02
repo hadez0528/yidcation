@@ -11,11 +11,11 @@ export const useTableColumnVisibility = (
   minVisibleColumns = 2
 ) => {
   const state = useState<TableColumnVisibilityState>(
-    `${tableName}ColumnVisibility`,
     () => ({
       columns,
       visibleColumns: [...defaultVisibleColumns],
-    })
+    }),
+    `${tableName}ColumnVisibility`
   );
 
   const isVisible = (columnName: string) =>
@@ -43,7 +43,6 @@ export const useTableColumnVisibility = (
 
   return {
     state,
-    ...state.value,
     defaultVisibleColumns,
     toggleColumnVisibility,
     isVisible,

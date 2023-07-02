@@ -1,5 +1,5 @@
 export interface FilterState {
-  filters: { [attributeId: string]: string };
+  filters: Record<string, string>;
   isActive: boolean;
 }
 
@@ -10,9 +10,9 @@ export const useFilter = () => {
   }));
 
   const setFilter = (attributeId: string, attributeValue: string) => {
-    if (attributeValue === "" && attributeId in state.value.filters) {
+    if (attributeValue === "") {
       delete state.value.filters[attributeId];
-    } else if (attributeValue !== "") {
+    } else {
       state.value.filters[attributeId] = attributeValue;
     }
 
@@ -28,7 +28,9 @@ export const useFilter = () => {
     for (const [attributeId, attributeValue] of Object.entries(
       state.value.filters
     )) {
-      if (attributeValue !== product.attributes[attributeId]) return false;
+      if (attributeValue !== product.attributes[attributeId]) {
+        return false;
+      }
     }
     return true;
   };

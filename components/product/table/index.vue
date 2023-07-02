@@ -5,7 +5,7 @@
     </template>
     <template #body>
       <TableBodyRow
-        v-for="product in productSource"
+        v-for="product in data"
         :key="product.id"
         @edit="
           modal.show({ productId: product.id, initialValues: { ...product } })
@@ -54,37 +54,17 @@ const modal = useProductModalEdit();
 const productStorage = useProductStorage();
 const attributeStorage = useAttributeStorage();
 const filter = useFilter();
-const tableSort = useProductTableSort();
+const sort = useProductSort();
 const search = useSearch();
 const currency = useCurrency();
 
-const productSource = ref([...productStorage.entities.value]);
-
-watch(
-  tableSort.state,
-  () => {
-    productSource.value.sort(
-      tableSort.state.value.attributeKey === "createdAt"
-        ? tableSort.compareDateStringFunc
-        : tableSort.compareFunc
-    );
-  },
-  { deep: true }
-);
-
-watch(
-  [productStorage.entities, search.productResults, filter.state],
-  () => {
-    if (search.state.value.isActive) {
-      productSource.value = [...search.productResults.value];
-    } else {
-      productSource.value = [...productStorage.entities.value];
-    }
-
-    if (filter.state.value.isActive) {
-      productSource.value = productSource.value.filter(filter.filterFunc);
-    }
-  },
-  { deep: true }
+const { data } = useDataHandler<Product>(
+  productStorage.entities,
+  search.productResults,
+  filter.state,
+  filter.filterFunc,
+  sort.state,
+  sort.compareFunc,
+  sort.compareDateStringFunc
 );
 </script>

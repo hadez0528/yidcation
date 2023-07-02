@@ -94,7 +94,6 @@ export const useSearch = () => {
 
   return {
     state,
-    ...state.value,
     productResults,
     attributeResults,
     reset,

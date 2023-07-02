@@ -1,9 +1,14 @@
 export interface ModalState {
   hidden: boolean;
-  context: {};
+  context: Record<string, unknown>;
 }
 
-export const useModal = (modalName: string, defaultContext?: {}) => {
+export type ModalContext = Record<string, unknown>;
+
+export const useModal = (
+  modalName: string,
+  defaultContext: ModalContext = {}
+) => {
   const route = useRoute();
   const state = useState<ModalState>(`${modalName}Modal`, () => ({
     hidden: true,
@@ -14,7 +19,7 @@ export const useModal = (modalName: string, defaultContext?: {}) => {
     state.value.hidden = true;
   };
 
-  const show = (context?: {}) => {
+  const show = (context: ModalContext = {}) => {
     state.value.hidden = false;
     state.value.context = { ...context };
   };
