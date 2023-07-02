@@ -1,11 +1,10 @@
 <template>
   <TableHeadRow @settings="modal.show()">
     <template
-      v-for="column in columnVisibility.state.value.columns"
+      v-for="column in columnVisibility.visibleColumns.value"
       :key="column"
     >
       <TableHeadCell
-        v-if="columnVisibility.isVisible(column)"
         :show-sort-button="column !== 'id'"
         class="!py-2"
         @sort="() => handleToggleSort(column)"

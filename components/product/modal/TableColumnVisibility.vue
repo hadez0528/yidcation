@@ -5,7 +5,7 @@
     @close="modal.hide()"
   >
     <TableColumnVisibilitySelect
-      :columns="columnVisibility.state.value.columns"
+      :columns="columnVisibility.columns.value"
       :is-visible="columnVisibility.isVisible"
       @toggle="
         (columnName) => columnVisibility.toggleColumnVisibility(columnName)
