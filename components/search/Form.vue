@@ -1,5 +1,5 @@
 <template>
-  <form class="flex flex-row ml-8 mr-auto w-full max-w-md">
+  <form class="flex flex-row md:ml-8 md:mr-auto w-full max-w-md">
     <Field
       name="search-phrase"
       type="text"
