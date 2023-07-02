@@ -1,4 +1,4 @@
-export type ProductAttributes = { [attributeId: string]: string };
+export type ProductAttributes = Record<string, string>;
 
 export type Product = {
   id: string;
