@@ -12,5 +12,12 @@ export const useProductTableColumnVisibility = () => {
     6
   );
 
+  watch(attributeNames, () => {
+    columnVisibility.state.value.columns = [
+      ...columnVisibility.defaultVisibleColumns,
+      ...attributeNames.value,
+    ];
+  });
+
   return columnVisibility;
 };

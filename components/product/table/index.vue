@@ -29,18 +29,16 @@
           product.createdAt
         }}</TableCell>
         <template
-          v-for="[attributeId, attributeValue] of Object.entries(
-            product.attributes
-          )"
-          :key="attributeId"
+          v-for="attribute in attributeStorage.entities.value"
+          :key="attribute.id"
         >
           <TableCell
             v-if="
               columnVisibility.isVisible(
-                attributeStorage.getEntity(attributeId).name
+                attributeStorage.getEntity(attribute.id).name
               )
             "
-            >{{ attributeValue }}</TableCell
+            >{{ product.attributes[attribute.id] }}</TableCell
           >
         </template>
       </TableBodyRow>
