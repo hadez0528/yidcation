@@ -51,25 +51,30 @@ const emit = defineEmits<{
 
 const values = ref<string[]>([...props.defaultValues]);
 
-props.defaultValues && emit("updateValues", props.defaultValues);
+if (props.defaultValues) {
+  emit("updateValues", props.defaultValues);
+}
 
 const addValue = () => values.value.push(`Value ${values.value.length + 1}`);
 
-const removeValue = (valueIndex) => {
+const removeValue = (valueIndex: number) => {
   values.value = values.value.filter((_, index) => index !== valueIndex);
 };
 
-const checkValue = (e: any, valueIndex: number) => {
-  if (e.target.value === "") removeValue(valueIndex);
+const checkValue = (e: Event, valueIndex: number) => {
+  const target = e.target as HTMLInputElement;
+  if (target.value === "") {
+    removeValue(valueIndex);
+  }
 };
 
-const changeValue = (value, valueIndex) => {
+const changeValue = (value: string, valueIndex: number) => {
   values.value[valueIndex] = value;
 };
 
 watch(
   values,
-  (updatedValues) => {
+  (updatedValues: string[]) => {
     emit("updateValues", updatedValues);
   },
   { deep: true }
