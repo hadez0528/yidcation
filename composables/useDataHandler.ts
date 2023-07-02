@@ -31,8 +31,10 @@ export const useDataHandler = <T>(
         data.value = [...dataSource.value];
       }
 
-      if (filterState.value.isActive) {
-        data.value = data.value.filter(filterFunc);
+      if (filterState) {
+        if (filterState.value.isActive) {
+          data.value = data.value.filter(filterFunc);
+        }
       }
     },
     { deep: true }
