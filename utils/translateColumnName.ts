@@ -3,7 +3,7 @@ export const translateColumnName = (columnName: string) => {
     id: "ID",
     name: "Nazwa",
     price: "Cena",
-    quantity: "Ilośc",
+    quantity: "Ilość",
     createdAt: "Data utworzenia",
     type: "Typ",
   };
