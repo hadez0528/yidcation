@@ -3,7 +3,7 @@
     <BoxTitle>produkty</BoxTitle>
     <p
       v-if="search.productResults.value.length === 0"
-      class="text-l mt-8 normalcase text-gray-400"
+      class="text-l mt-4 normalcase text-gray-400"
     >
       Brak wyników wyszukiwania
     </p>
