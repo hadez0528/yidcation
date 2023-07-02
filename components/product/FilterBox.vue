@@ -1,5 +1,5 @@
 <template>
-  <Box class="lg:w-96 w-full h-min" v-bind="$attrs">
+  <Box class="lg:w-96 w-full h-min lg:sticky lg:top-4" v-bind="$attrs">
     <div class="flex items-start justify-between">
       <BoxTitle>filtry</BoxTitle>
       <ButtonText class="lg:hidden" @click="handleToggle">{{
