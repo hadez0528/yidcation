@@ -7,7 +7,7 @@
 <br>
 
 <p aling="center">
-  <img src="https://cdn.discordapp.com/attachments/597140854993584128/1126495886541869147/Slide_16_9_-_2.jpg">
+  <img src="https://cdn.discordapp.com/attachments/597140854993584128/1126500240053239870/Slide_16_9_-_2.jpg">
 </p>
 
 <br>
