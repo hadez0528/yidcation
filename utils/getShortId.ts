@@ -1,3 +1,3 @@
-import shortid from "shortid";
+import shortUUID from "short-uuid";
 
-export const getShortId = () => shortid();
+export const getShortId = () => shortUUID.generate();

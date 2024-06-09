@@ -33,7 +33,7 @@
   },
   "dependencies": {
     "fuse.js": "^6.6.2",
-    "shortid": "^2.2.16",
+    "short-uuid": "^5.2.0",
     "vee-validate": "^4.10.1",
     "yup": "^1.2.0"
   },
