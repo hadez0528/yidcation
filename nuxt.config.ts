@@ -16,4 +16,5 @@ export default defineNuxtConfig({
   imports: {
     dirs: ["composables/**"],
   },
+  modules: ["@nuxt/test-utils/module"],
 });
