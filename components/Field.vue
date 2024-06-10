@@ -3,7 +3,7 @@
     <div class="flex flex-col">
       <label
         v-if="label"
-        :for="`${name}-input`"
+        :for="id"
         :class="{ 'text-red-500': errorMessage }"
         class="font-semibold text-sm text-secondary"
         >{{ label }}</label
@@ -57,7 +57,7 @@ const props = withDefaults(defineProps<Props>(), {
 
 const name = toRef(props, "name");
 
-const id = computed(() => `${props.name}-${props.is}`);
+const id = useId();
 
 const { value, errorMessage, handleBlur, handleChange } = useField(
   name,
