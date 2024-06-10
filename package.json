@@ -30,7 +30,7 @@
     "eslint-plugin-prettier": "^4.2.1",
     "happy-dom": "^14.12.0",
     "husky": "^9.0.11",
-    "nuxt": "^3.5.2",
+    "nuxt": "^3.11",
     "playwright-core": "^1.44.1",
     "postcss": "^8.4.24",
     "prettier": "^2.8.8",
