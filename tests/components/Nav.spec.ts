@@ -14,13 +14,13 @@ describe("Nav component", () => {
               <div class="flex flex-col">
                 <!--v-if-->
                 <!--v-if-->
-              </div><input id="search-phrase-input" class="focus:border focus:border-secondary focus:border-solid rounded bg-gray-50 p-2 text-tertiary text-sm outline-none text-color-slate-700 border border-transparent rounded-e-none w-full" type="text" placeholder="Wyszukaj coś..">
+              </div><input id="nDPA1A9Vgag_0" class="focus:border focus:border-secondary focus:border-solid rounded bg-gray-50 p-2 text-tertiary text-sm outline-none text-color-slate-700 border border-transparent rounded-e-none w-full" type="text" placeholder="Wyszukaj coś..">
             </div>
             <div class="flex flex-col rounded-s-none border-l border-l-gray-100">
               <div class="flex flex-col">
                 <!--v-if-->
                 <!--v-if-->
-              </div><select id="search-range-select" class="focus:border focus:border-secondary focus:border-solid rounded text-tertiary bg-gray-50 p-2 text-sm outline-none text-color-slate-700 border border-transparent rounded-s-none border-l border-l-gray-100">
+              </div><select id="nDPA1A9Vgag_1" class="focus:border focus:border-secondary focus:border-solid rounded text-tertiary bg-gray-50 p-2 text-sm outline-none text-color-slate-700 border border-transparent rounded-s-none border-l border-l-gray-100">
                 <option value="all">Wszystko</option>
                 <option value="products">Produkty</option>
                 <option value="attributes">Atrybuty</option>
@@ -31,7 +31,7 @@ describe("Nav component", () => {
             <div class="flex flex-col">
               <!--v-if-->
               <!--v-if-->
-            </div><select id="currency-select" class="focus:border focus:border-secondary focus:border-solid rounded text-tertiary bg-gray-50 p-2 text-sm outline-none text-color-slate-700 border border-transparent ml-4">
+            </div><select id="nDPA1A9Vgag_2" class="focus:border focus:border-secondary focus:border-solid rounded text-tertiary bg-gray-50 p-2 text-sm outline-none text-color-slate-700 border border-transparent ml-4">
               <option value="PLN">PLN</option>
               <option value="EUR">EUR</option>
               <option value="USD">USD</option>
