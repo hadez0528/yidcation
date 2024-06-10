@@ -11,7 +11,8 @@
     "lint:prettier": "prettier --check .",
     "lint": "pnpm lint:js && pnpm lint:prettier",
     "lint:fix": "prettier --write --list-different . && pnpm lint:js --fix",
-    "prepare": "husky"
+    "prepare": "husky",
+    "test": "vitest"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.3.0",
