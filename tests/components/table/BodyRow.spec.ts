@@ -6,11 +6,23 @@ import { fireEvent } from "@testing-library/vue";
 
 describe("BodyRow component", () => {
   it("renders without errors", async () => {
-    const { emitted } = await renderSuspended(BodyRow);
+    const { emitted } = await renderSuspended(BodyRow, {
+      attrs: {
+        "data-testid": "body-row",
+      },
+      slots: {
+        default: () => "test slot",
+      },
+    });
+
+    const bodyrow = screen.getByTestId("body-row");
 
     const buttons = screen.getAllByRole("button");
     const editButton = buttons[0];
     const deleteButton = buttons[1];
+
+    expect(bodyrow).toBeDefined();
+    expect(bodyrow.textContent).toBe("test slot");
 
     fireEvent.click(editButton);
     fireEvent.click(deleteButton);
