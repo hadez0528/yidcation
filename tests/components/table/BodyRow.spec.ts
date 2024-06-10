@@ -1,12 +1,12 @@
 import { describe, it, expect } from "vitest";
 import { renderSuspended } from "@nuxt/test-utils/runtime";
 import { screen } from "@testing-library/vue";
-import BodyRow from "@@/components/table/BodyRow.vue";
+import TableBodyRow from "@@/components/table/BodyRow.vue";
 import { fireEvent } from "@testing-library/vue";
 
-describe("BodyRow component", () => {
+describe("TableBodyRow component", () => {
   it("renders without errors", async () => {
-    const { emitted } = await renderSuspended(BodyRow, {
+    const { emitted } = await renderSuspended(TableBodyRow, {
       attrs: {
         "data-testid": "body-row",
       },
@@ -34,7 +34,7 @@ describe("BodyRow component", () => {
   });
 
   it("renders unchanged", async () => {
-    const container = await renderSuspended(BodyRow);
+    const container = await renderSuspended(TableBodyRow);
 
     expect(container.html()).toMatchInlineSnapshot(`
       "<div id="test-wrapper">
