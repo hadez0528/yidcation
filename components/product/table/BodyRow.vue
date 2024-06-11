@@ -22,7 +22,7 @@ const columnVisibility = useProductTableColumnVisibility();
 const modal = useProductModalEdit();
 
 export interface Props {
-  id: number;
+  id: string;
   name: string;
   category: string;
   fitterPlace: string;
