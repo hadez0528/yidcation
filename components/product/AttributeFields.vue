@@ -29,6 +29,8 @@
 </template>
 
 <script setup lang="ts">
+import { isEmpty } from "@@/utils/isEmpty";
+
 const attributeStorage = useAttributeStorage();
 
 export interface Props {
@@ -42,11 +44,12 @@ const emit = defineEmits<{
 
 const attributes = ref<ProductAttributes>({ ...props.defaultAttributes });
 
-props.defaultAttributes &&
+!isEmpty(props.defaultAttributes) &&
   emit("updateAttributes", Object.entries(attributes.value));
 
 const changeAttribute = (e: any, attributeId: string) => {
   attributes.value[attributeId] = e.target.value;
+  console.log(attributes.value);
   emit("updateAttributes", Object.entries(attributes.value));
 };
 </script>
