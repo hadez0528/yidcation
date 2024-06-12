@@ -37,13 +37,18 @@
 </template>
 
 <script setup lang="ts">
+import { isEmpty } from "@@/utils/isEmpty";
+
 export interface Props {
   reset: boolean;
   errorMessage?: string;
   defaultValues?: string[];
 }
 
-const props = defineProps<Props>();
+const props = withDefaults(defineProps<Props>(), {
+  errorMessage: undefined,
+  defaultValues: () => [],
+});
 
 const emit = defineEmits<{
   updateValues: [values: string[]];
@@ -51,9 +56,7 @@ const emit = defineEmits<{
 
 const values = ref<string[]>([...props.defaultValues]);
 
-if (props.defaultValues) {
-  emit("updateValues", props.defaultValues);
-}
+!isEmpty(props.defaultValues) && emit("updateValues", props.defaultValues);
 
 const addValue = () => values.value.push(`Value ${values.value.length + 1}`);
 
