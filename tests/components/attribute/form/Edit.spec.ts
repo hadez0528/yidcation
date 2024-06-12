@@ -3,8 +3,19 @@ import { renderSuspended } from "@nuxt/test-utils/runtime";
 import AttributeFormEdit from "@@/components/attribute/form/Edit.vue";
 
 describe("AttributeFormEdit component", () => {
+  const commonOptions = {
+    attrs: {
+      attributeId: "test id",
+      initialValues: {
+        name: "test name",
+        type: "select",
+        values: [],
+      },
+    },
+  };
+
   it("renders unchanged", async () => {
-    const container = await renderSuspended(AttributeFormEdit);
+    const container = await renderSuspended(AttributeFormEdit, commonOptions);
 
     expect(container.html()).toMatchInlineSnapshot(`
       "<div id="test-wrapper">
